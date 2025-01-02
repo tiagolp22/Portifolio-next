@@ -2,24 +2,102 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --background: 255, 255, 255;
-    --foreground: 17, 24, 39;
-  }
+/* Tema claro - Cores inspiradas em interfaces modernas */
+:root[data-theme="light"] {
+  --background: 250, 251, 252;
+  --foreground: 23, 23, 23;
+  --card-background: 255, 255, 255;
+  --navbar-background: 255, 255, 255, 0.9;
+  --muted: 100, 116, 139;
+  --card-border: 226, 232, 240;
+  --button-hover: 241, 245, 249;
+  --highlight: 37, 99, 235;
+  --secondary: 71, 85, 105;
+  --accent: 79, 70, 229;
+}
 
-  .dark {
-    --background: 17, 24, 39;
-    --foreground: 249, 250, 251;
+/* Tema escuro - Ajustado para melhor contraste */
+:root[data-theme="dark"] {
+  --background: 17, 24, 39;
+  --foreground: 248, 250, 252;
+  --card-background: 31, 41, 55;
+  --navbar-background: 31, 41, 55, 0.9;
+  --muted: 148, 163, 184;
+  --card-border: 51, 65, 85;
+  --button-hover: 55, 65, 81;
+  --highlight: 59, 130, 246;
+  --secondary: 226, 232, 240;
+  --accent: 129, 140, 248;
+}
+
+/* Transições suaves e animadas */
+:root {
+  --transition-duration: 400ms;
+  --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animação para a transição de tema */
+:root[data-theme] {
+  animation: theme-fade 400ms var(--transition-timing);
+}
+
+@keyframes theme-fade {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.998);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
+/* Transições globais melhoradas */
+* {
+  transition: 
+    background-color var(--transition-duration) var(--transition-timing),
+    border-color var(--transition-duration) var(--transition-timing),
+    color var(--transition-duration) var(--transition-timing),
+    fill var(--transition-duration) var(--transition-timing),
+    stroke var(--transition-duration) var(--transition-timing),
+    opacity var(--transition-duration) var(--transition-timing),
+    box-shadow var(--transition-duration) var(--transition-timing),
+    transform var(--transition-duration) var(--transition-timing);
+}
+
+/* Estilos base */
+body {
+  color: rgb(var(--foreground));
+  background: rgb(var(--background));
+}
+
+.card {
+  background: rgb(var(--card-background));
+  border: 1px solid rgb(var(--card-border));
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.text-muted {
+  color: rgb(var(--muted));
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-[rgb(var(--highlight))] to-[rgb(var(--accent))] bg-clip-text text-transparent;
+}
+
+/* Componentes */
 @layer components {
   .container {
     @apply max-w-7xl mx-auto px-4;
   }
+
+  .hover-effect {
+    @apply hover:scale-[1.02] hover:shadow-lg active:scale-[0.98] transition-all duration-300;
+  }
 }
 
+/* Seleção de texto */
 ::selection {
-  @apply bg-primary-light dark:bg-primary-dark text-white;
+  background-color: rgb(var(--highlight));
+  color: rgb(255, 255, 255);
 }

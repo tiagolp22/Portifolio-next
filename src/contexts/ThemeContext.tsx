@@ -1,37 +1,49 @@
 'use client'
-import { createContext, useCallback, useEffect, useState } from 'react'
-import { Theme, ThemeContextType } from '@/types/theme'
+import React, { createContext, useCallback, useEffect, useState } from 'react';
+import type { Theme, ThemeContextType } from '@/types/theme';
+import { applyTheme, getSystemTheme, resolveTheme, type ThemeColors } from '@/utils/themeUtils';
 
-export const ThemeContext = createContext<ThemeContextType>({
-  theme: 'dark',
-  toggleTheme: () => null,
-})
+export const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const [theme, setTheme] = useState<Theme>('dark')
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
+  const [theme, setThemeState] = useState<Theme>('system');
+  const [effectiveTheme, setEffectiveTheme] = useState<ThemeColors>('dark');
 
-  // Carregar tema salvo ao iniciar
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') as Theme
-    if (savedTheme) {
-      setTheme(savedTheme)
-      document.documentElement.classList.toggle('dark', savedTheme === 'dark')
+  const handleSystemThemeChange = useCallback((e: MediaQueryListEvent) => {
+    if (theme === 'system') {
+      const newTheme = e.matches ? 'dark' : 'light';
+      setEffectiveTheme(newTheme);
+      applyTheme(newTheme);
     }
-  }, [])
+  }, [theme]);
 
-  // Alternar tema
-  const toggleTheme = useCallback(() => {
-    setTheme((prevTheme) => {
-      const newTheme = prevTheme === 'dark' ? 'light' : 'dark'
-      localStorage.setItem('theme', newTheme)
-      document.documentElement.classList.toggle('dark', newTheme === 'dark')
-      return newTheme
-    })
-  }, [])
+  const setTheme = useCallback((newTheme: Theme) => {
+    setThemeState(newTheme);
+    const resolvedTheme = resolveTheme(newTheme);
+    setEffectiveTheme(resolvedTheme);
+    applyTheme(resolvedTheme);
+    localStorage.setItem('theme', newTheme);
+  }, []);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    mediaQuery.addEventListener('change', handleSystemThemeChange);
+    
+    const savedTheme = localStorage.getItem('theme') as Theme | null;
+    if (savedTheme) {
+      setTheme(savedTheme);
+    } else {
+      const systemTheme = getSystemTheme();
+      setEffectiveTheme(systemTheme);
+      applyTheme(systemTheme);
+    }
+
+    return () => mediaQuery.removeEventListener('change', handleSystemThemeChange);
+  }, [handleSystemThemeChange, setTheme]);
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, setTheme }}>
       {children}
     </ThemeContext.Provider>
-  )
+  );
 }

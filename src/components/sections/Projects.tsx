@@ -9,7 +9,7 @@ const projects = [
   {
     title: 'Québecar',
     subtitle: 'E-commerce Automobile',
-    description: 'Plateforme bilingue innovante qui révolutionne l\'achat et la vente de voitures.',
+    description: "Plateforme bilingue innovante qui révolutionne l'achat et la vente de voitures.",
     image: '/api/placeholder/600/400',
     tech: ['Laravel', 'React', 'MySQL', 'Stripe', 'Cloudinary'],
     features: [
@@ -28,7 +28,7 @@ const projects = [
   {
     title: 'Edunova',
     subtitle: 'Plateforme E-learning',
-    description: 'Solution moderne d\'apprentissage en ligne avec fonctionnalités avancées.',
+    description: "Solution moderne d'apprentissage en ligne avec fonctionnalités avancées.",
     image: '/api/placeholder/600/400',
     tech: ['React', 'Node.js', 'PostgreSQL', 'Docker', 'Redis'],
     features: [
@@ -59,7 +59,7 @@ export const Projects = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Projets Phares</h2>
-          <p className="text-gray-400">Découvrez mes dernières réalisations</p>
+          <p className="text-[rgb(var(--muted))]">Découvrez mes dernières réalisations</p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -73,21 +73,23 @@ export const Projects = () => {
               onClick={() => setSelectedProject(project)}
               className="cursor-pointer"
             >
-              <Card className="h-full hover:transform hover:scale-105 transition-all">
+              <Card className="h-full group">
                 <img 
                   src={project.image}
                   alt={project.title}
                   className="w-full h-48 object-cover rounded-t-lg"
                 />
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-blue-400 mb-4">{project.subtitle}</p>
-                  <p className="text-gray-300 mb-4">{project.description}</p>
+                  <h3 className="text-xl font-bold mb-2 text-[rgb(var(--foreground))]">
+                    {project.title}
+                  </h3>
+                  <p className="text-[rgb(var(--highlight))] mb-4">{project.subtitle}</p>
+                  <p className="text-[rgb(var(--muted))] mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech) => (
                       <span 
                         key={tech}
-                        className="px-3 py-1 bg-gray-700 rounded-full text-sm"
+                        className="px-3 py-1 bg-[rgb(var(--card-background))] border border-[rgb(var(--card-border))] rounded-full text-sm text-[rgb(var(--muted))]"
                       >
                         {tech}
                       </span>
