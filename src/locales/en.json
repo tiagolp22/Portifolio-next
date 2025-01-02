@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "title": "Tiago Barros | Portfolio",
+    "description": "Portfolio of Tiago Barros - Full Stack Developer specialized in React, Node.js and TypeScript.",
+    "keywords": "developer, full stack, react, node.js, typescript"
+  },
+  "nav": {
+    "skills": "Skills",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "sections": {
+    "skills": {
+      "title": "Skills",
+      "subtitle": "Technical expertise and mastered technologies"
+    },
+    "projects": {
+      "title": "Featured Projects",
+      "subtitle": "Discover my latest achievements"
+    },
+    "experience": {
+      "title": "Experience",
+      "subtitle": "My professional journey"
+    },
+    "contact": {
+      "title": "Contact",
+      "subtitle": "Available for opportunities"
+    }
+  }
+}
