@@ -4,12 +4,51 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { BackToTop } from '@/components/ui/BackToTop'
 import { ThemeProvider } from '@/contexts/ThemeContext'
+import { I18nProvider } from '@/contexts/I18nContext'
+import { SkipToContent } from '@/components/a11y/SkipToContent'
+import { generatePersonSchema, generateWebsiteSchema } from '@/utils/seo/schema'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata = {
-  title: 'Tiago Barros | Portfolio',
-  description: 'Portfolio de Tiago Barros - Développeur Full Stack',
+export async function generateMetadata({ params }) {
+  const locale = params.locale || 'fr'
+  
+  return {
+    metadataBase: new URL('https://tiagobarros.dev'),
+    title: {
+      template: '%s | Tiago Barros',
+      default: 'Tiago Barros | Portfolio'
+    },
+    description: locale === 'fr'
+      ? 'Portfolio de Tiago Barros - Développeur Full Stack spécialisé en React, Node.js et TypeScript'
+      : 'Portfolio of Tiago Barros - Full Stack Developer specialized in React, Node.js and TypeScript',
+    keywords: ['developer', 'full stack', 'react', 'node.js', 'typescript'],
+    authors: [{ name: 'Tiago Barros' }],
+    openGraph: {
+      title: 'Tiago Barros | Portfolio',
+      description: locale === 'fr'
+        ? 'Portfolio de Tiago Barros - Développeur Full Stack'
+        : 'Tiago Barros Portfolio - Full Stack Developer',
+      url: 'https://tiagobarros.dev',
+      siteName: 'Tiago Barros Portfolio',
+      locale: locale,
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'Tiago Barros | Portfolio',
+      description: locale === 'fr'
+        ? 'Portfolio de Tiago Barros - Développeur Full Stack'
+        : 'Tiago Barros Portfolio - Full Stack Developer',
+    },
+    alternates: {
+      canonical: 'https://tiagobarros.dev',
+      languages: {
+        'fr': 'https://tiagobarros.dev/fr',
+        'en': 'https://tiagobarros.dev/en',
+      },
+    },
+  }
 }
 
 export default function RootLayout({
@@ -19,12 +58,28 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className="scroll-smooth">
-      <body className={`${inter.className} bg-background-light text-text-light dark:bg-background-dark dark:text-text-dark`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              generatePersonSchema('fr'),
+              generateWebsiteSchema('fr')
+            ])
+          }}
+        />
+      </head>
+      <body className={inter.className}>
         <ThemeProvider>
-          <Header />
-          <main className="pt-20">{children}</main>
-          <Footer />
-          <BackToTop />
+          <I18nProvider>
+            <SkipToContent />
+            <Header />
+            <main id="main-content" className="pt-20" tabIndex={-1}>
+              {children}
+            </main>
+            <Footer />
+            <BackToTop />
+          </I18nProvider>
         </ThemeProvider>
       </body>
     </html>
