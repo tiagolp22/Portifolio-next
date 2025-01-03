@@ -3,15 +3,18 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { ThemeToggle } from '@/components/ui/ThemeToggle'
+import { LanguageSelector } from '@/components/i18n/LanguageSelector'
+import { useI18n } from '@/contexts/I18nContext'
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { t } = useI18n()
 
   const menuItems = [
-    { href: '#competences', label: 'Compétences' },
-    { href: '#projets', label: 'Projets' },
-    { href: '#experience', label: 'Expérience' },
-    { href: '#contact', label: 'Contact' }
+    { href: '#competences', label: t('nav.skills') },
+    { href: '#projets', label: t('nav.projects') },
+    { href: '#experience', label: t('nav.experience') },
+    { href: '#contact', label: t('nav.contact') }
   ]
 
   return (
@@ -38,11 +41,15 @@ export const Header = () => {
                 {item.label}
               </Link>
             ))}
-            <ThemeToggle />
+            <div className="flex items-center gap-4">
+              <LanguageSelector />
+              <ThemeToggle />
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-4">
+            <LanguageSelector />
             <ThemeToggle />
             <button
               className="hover:bg-[rgb(var(--button-hover))] p-2 rounded-lg transition-colors"

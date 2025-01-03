@@ -7,8 +7,7 @@ export const ThemeContext = createContext<ThemeContextType | undefined>(undefine
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setThemeState] = useState<Theme>('system');
-  const [effectiveTheme, setEffectiveTheme] = useState<ThemeColors>('dark');
-
+  const [, setEffectiveTheme] = useState<ThemeColors>('dark');
   const handleSystemThemeChange = useCallback((e: MediaQueryListEvent) => {
     if (theme === 'system') {
       const newTheme = e.matches ? 'dark' : 'light';

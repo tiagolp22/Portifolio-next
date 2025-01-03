@@ -28,6 +28,26 @@ const projects = [
     metricsKey: 'projects.edunova.metrics',
     github: 'https://github.com/tiagolp22/EDUNOVA',
   },
+  {
+    titleKey: 'projects.pets.title',
+    subtitleKey: 'projects.pets.subtitle',
+    descriptionKey: 'projects.pets.description',
+    image: '/api/placeholder/600/400',
+    techKey: 'projects.pets.tech',
+    featuresKey: 'projects.pets.features',
+    metricsKey: 'projects.pets.metrics',
+    github: 'https://github.com/tiagolp22/Pets',
+  },
+  {
+    titleKey: 'projects.portfolio.title',
+    subtitleKey: 'projects.portfolio.subtitle',
+    descriptionKey: 'projects.portfolio.description',
+    image: '/api/placeholder/600/400',
+    techKey: 'projects.portfolio.tech',
+    featuresKey: 'projects.portfolio.features',
+    metricsKey: 'projects.portfolio.metrics',
+    github: 'https://github.com/tiagolp22/Portifolio',
+  }
 ]
 
 export const Projects = () => {

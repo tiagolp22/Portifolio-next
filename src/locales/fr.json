@@ -10,10 +10,92 @@
     "experience": "Expérience",
     "contact": "Contact"
   },
+  "hero": {
+    "name": "Tiago Barros",
+    "title": "Développeur Full Stack",
+    "subtitle": "Passionné par la création d'applications web modernes et performantes",
+    "cta": {
+      "projects": "Voir mes projets",
+      "contact": "Me contacter"
+    }
+  },
   "sections": {
     "skills": {
       "title": "Compétences",
-      "subtitle": "Expertise technique et technologies maîtrisées"
+      "subtitle": "Expertise technique et technologies maîtrisées",
+      "noData": "Aucune donnée disponible pour cette catégorie.",
+      "categories": {
+        "frontend": {
+          "title": "Développement Frontend",
+          "skills": [
+            {
+              "name": "React",
+              "level": "Expert",
+              "description": "Performance, Hooks Avancés, Redux"
+            },
+            {
+              "name": "TypeScript",
+              "level": "Expert",
+              "description": "Types, Optimisation"
+            },
+            {
+              "name": "HTML5/CSS3",
+              "level": "Expert",
+              "description": "SASS, Responsive Design"
+            },
+            {
+              "name": "Angular",
+              "level": "Intermédiaire",
+              "description": "Components, Services"
+            }
+          ]
+        },
+        "backend": {
+          "title": "Développement Backend",
+          "skills": [
+            {
+              "name": "Node.js",
+              "level": "Expert",
+              "description": "Express.js, API REST"
+            },
+            {
+              "name": "PHP",
+              "level": "Expert",
+              "description": "Laravel, Symfony"
+            },
+            {
+              "name": "Java",
+              "level": "Intermédiaire",
+              "description": "Spring Boot"
+            }
+          ]
+        },
+        "database": {
+          "title": "Base de Données & DevOps",
+          "skills": [
+            {
+              "name": "MongoDB",
+              "level": "Expert",
+              "description": "Agrégation, Performance"
+            },
+            {
+              "name": "MySQL/MariaDB",
+              "level": "Expert",
+              "description": "Optimisation, Indexation"
+            },
+            {
+              "name": "PostgreSQL",
+              "level": "Avancé",
+              "description": "Query Optimization"
+            },
+            {
+              "name": "Docker",
+              "level": "Avancé",
+              "description": "Conteneurisation, Compose"
+            }
+          ]
+        }
+      }
     },
     "projects": {
       "title": "Projets Phares",
@@ -25,7 +107,110 @@
     },
     "contact": {
       "title": "Contact",
-      "subtitle": "Disponible pour des opportunités"
+      "subtitle": "Disponible pour des opportunités",
+      "availability": "Ouvert aux opportunités freelance et temps plein"
     }
+  },
+  "projects": {
+    "quebecar": {
+      "title": "Québecar",
+      "subtitle": "E-commerce Automobile",
+      "description": "Plateforme bilingue innovante de vente et d'achat de voitures.",
+      "tech": ["Laravel", "React", "MySQL", "Stripe", "Cloudinary"],
+      "features": [
+        "Architecture microservices scalable",
+        "Intégration Stripe sécurisée",
+        "Système de gestion média cloud",
+        "Interface bilingue (FR/EN)"
+      ],
+      "metrics": [
+        "Temps de réponse < 200ms",
+        "Conversion +25%",
+        "Satisfaction client 4.8/5"
+      ]
+    },
+    "edunova": {
+      "title": "Edunova",
+      "subtitle": "Plateforme E-learning",
+      "description": "Solution moderne d'apprentissage en ligne avec des fonctionnalités avancées.",
+      "tech": ["React", "Node.js", "PostgreSQL", "Docker", "Redis"],
+      "features": [
+        "Architecture événementielle",
+        "Streaming vidéo optimisé",
+        "Analytics en temps réel",
+        "Cache distribué"
+      ],
+      "metrics": [
+        "Support 5k+ utilisateurs simultanés",
+        "Temps de chargement -40%",
+        "Engagement +35%"
+      ]
+    },
+    "pets": {
+      "title": "Pets",
+      "subtitle": "Application de Gestion Animalière",
+      "description": "Plateforme de gestion pour animaux de compagnie avec fonctionnalités avancées.",
+      "tech": ["React", "Node.js", "MongoDB", "Express"],
+      "features": [
+        "Système de gestion d'animaux",
+        "Profils détaillés",
+        "Interface intuitive",
+        "API RESTful"
+      ],
+      "metrics": [
+        "Performance optimisée",
+        "UX améliorée",
+        "Architecture modulaire"
+      ]
+    },
+    "portfolio": {
+      "title": "Portfolio",
+      "subtitle": "Site Web Personnel",
+      "description": "Portfolio professionnel avec design moderne et responsive.",
+      "tech": ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      "features": [
+        "Design responsive",
+        "Animations fluides",
+        "Multi-langue",
+        "Mode sombre/clair"
+      ],
+      "metrics": [
+        "Performance 95+",
+        "SEO optimisé",
+        "Accessibilité maximale"
+      ]
+    }
+  },
+  "experience": {
+    "win": {
+      "role": "Développeur Full Stack",
+      "company": "Win Technologie",
+      "period": "Août 2024 - Présent",
+      "achievements": [
+        { "icon": "📊", "text": "Augmentation de l'engagement utilisateur de 25%" },
+        { "icon": "⚡", "text": "Réduction du temps de réponse API de 30%" },
+        { "icon": "💻", "text": "Optimisation des requêtes MongoDB de 40%" }
+      ]
+    },
+    "artur": {
+      "role": "Développeur Back-End (Stage)",
+      "company": "Artur.Art",
+      "period": "Juillet 2024 - Septembre 2024",
+      "achievements": [
+        { "icon": "📈", "text": "Amélioration du taux de conversion de 40%" },
+        { "icon": "🤝", "text": "Attraction de plus de 100 artistes locaux" },
+        { "icon": "📱", "text": "Augmentation de l'engagement de 35%" }
+      ]
+    }
+  },
+  "contact": {
+    "email": { "name": "Email" },
+    "linkedin": { "name": "LinkedIn" },
+    "github": { "name": "GitHub" },
+    "sendEmail": "Envoyer un email",
+    "downloadCV": "Télécharger le CV"
+  },
+  "footer": {
+    "copyright": "© {year} Tiago Barros. Tous droits réservés."
   }
 }

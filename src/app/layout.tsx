@@ -10,25 +10,27 @@ import { generatePersonSchema, generateWebsiteSchema } from '@/utils/seo/schema'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata({ params }: { params: { locale?: string } }) {
   const locale = params.locale || 'fr'
-  
+
   return {
     metadataBase: new URL('https://tiagobarros.dev'),
     title: {
       template: '%s | Tiago Barros',
-      default: 'Tiago Barros | Portfolio'
+      default: 'Tiago Barros | Portfolio',
     },
-    description: locale === 'fr'
-      ? 'Portfolio de Tiago Barros - Développeur Full Stack spécialisé en React, Node.js et TypeScript'
-      : 'Portfolio of Tiago Barros - Full Stack Developer specialized in React, Node.js and TypeScript',
+    description:
+      locale === 'fr'
+        ? 'Portfolio de Tiago Barros - Développeur Full Stack spécialisé en React, Node.js et TypeScript'
+        : 'Portfolio of Tiago Barros - Full Stack Developer specialized in React, Node.js and TypeScript',
     keywords: ['developer', 'full stack', 'react', 'node.js', 'typescript'],
     authors: [{ name: 'Tiago Barros' }],
     openGraph: {
       title: 'Tiago Barros | Portfolio',
-      description: locale === 'fr'
-        ? 'Portfolio de Tiago Barros - Développeur Full Stack'
-        : 'Tiago Barros Portfolio - Full Stack Developer',
+      description:
+        locale === 'fr'
+          ? 'Portfolio de Tiago Barros - Développeur Full Stack'
+          : 'Tiago Barros Portfolio - Full Stack Developer',
       url: 'https://tiagobarros.dev',
       siteName: 'Tiago Barros Portfolio',
       locale: locale,
@@ -37,15 +39,18 @@ export async function generateMetadata({ params }) {
     twitter: {
       card: 'summary_large_image',
       title: 'Tiago Barros | Portfolio',
-      description: locale === 'fr'
-        ? 'Portfolio de Tiago Barros - Développeur Full Stack'
-        : 'Tiago Barros Portfolio - Full Stack Developer',
+      description:
+        locale === 'fr'
+          ? 'Portfolio de Tiago Barros - Développeur Full Stack'
+          : 'Tiago Barros Portfolio - Full Stack Developer',
     },
     alternates: {
       canonical: 'https://tiagobarros.dev',
       languages: {
-        'fr': 'https://tiagobarros.dev/fr',
-        'en': 'https://tiagobarros.dev/en',
+        fr: 'https://tiagobarros.dev/fr',
+        en: 'https://tiagobarros.dev/en',
+        pt: 'https://tiagobarros.dev/pt',
+        es: 'https://tiagobarros.dev/es',
       },
     },
   }
@@ -57,15 +62,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="fr" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth">
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify([
               generatePersonSchema('fr'),
-              generateWebsiteSchema('fr')
-            ])
+              generateWebsiteSchema('fr'),
+            ]),
           }}
         />
       </head>

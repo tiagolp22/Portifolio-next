@@ -1,0 +1,216 @@
+{
+ "meta": {
+   "title": "Tiago Barros | Portafolio",
+   "description": "Portafolio de Tiago Barros - Desarrollador Full Stack especializado en React, Node.js y TypeScript.",
+   "keywords": "desarrollador, full stack, react, node.js, typescript"
+ },
+ "nav": {
+   "skills": "Habilidades", 
+   "projects": "Proyectos",
+   "experience": "Experiencia",
+   "contact": "Contacto"
+ },
+ "hero": {
+   "name": "Tiago Barros",
+   "title": "Desarrollador Full Stack",
+   "subtitle": "Apasionado por crear aplicaciones web modernas y eficientes",
+   "cta": {
+     "projects": "Ver proyectos",
+     "contact": "Contacto"
+   }
+ },
+ "sections": {
+   "skills": {
+     "title": "Habilidades",
+     "subtitle": "Experiencia técnica y tecnologías dominadas",
+     "noData": "No hay datos disponibles para esta categoría.",
+     "categories": {
+       "frontend": {
+         "title": "Desarrollo Frontend",
+         "skills": [
+           {
+             "name": "React",
+             "level": "Experto",
+             "description": "Rendimiento, Hooks Avanzados, Redux"
+           },
+           {
+             "name": "TypeScript",
+             "level": "Experto", 
+             "description": "Tipos, Optimización"
+           },
+           {
+             "name": "HTML5/CSS3",
+             "level": "Experto",
+             "description": "SASS, Diseño Responsivo"  
+           },
+           {
+             "name": "Angular",
+             "level": "Intermedio",
+             "description": "Componentes, Servicios"
+           }
+         ]
+       },
+       "backend": {
+         "title": "Desarrollo Backend",
+         "skills": [
+           {
+             "name": "Node.js",
+             "level": "Experto",
+             "description": "Express.js, APIs REST"
+           },
+           {
+             "name": "PHP",
+             "level": "Experto",
+             "description": "Laravel, Symfony"
+           },
+           {
+             "name": "Java",
+             "level": "Intermedio",
+             "description": "Spring Boot"
+           }
+         ]
+       },
+       "database": {
+         "title": "Base de Datos y DevOps",
+         "skills": [
+           {
+             "name": "MongoDB",
+             "level": "Experto",
+             "description": "Agregación, Rendimiento"
+           },
+           {
+             "name": "MySQL/MariaDB",
+             "level": "Experto",
+             "description": "Optimización, Indexación"
+           },
+           {
+             "name": "PostgreSQL",
+             "level": "Avanzado",
+             "description": "Optimización de consultas"
+           },
+           {
+             "name": "Docker",
+             "level": "Avanzado",
+             "description": "Contenedorización, Compose"
+           }
+         ]
+       }
+     }
+   },
+   "projects": {
+     "title": "Proyectos Destacados",
+     "subtitle": "Descubre mis últimos logros"
+   },
+   "experience": {
+     "title": "Experiencia",
+     "subtitle": "Mi trayectoria profesional"
+   },
+   "contact": {
+     "title": "Contacto",
+     "subtitle": "Disponible para oportunidades",
+     "availability": "Abierto a oportunidades freelance y tiempo completo"
+   }
+ },
+ "projects": {
+   "quebecar": {
+     "title": "Québecar",
+     "subtitle": "E-commerce Automotriz",
+     "description": "Una plataforma bilingüe innovadora que revoluciona la compra y venta de autos.",
+     "tech": ["Laravel", "React", "MySQL", "Stripe", "Cloudinary"],
+     "features": [
+       "Arquitectura escalable de microservicios",
+       "Integración segura con Stripe",
+       "Sistema de gestión de medios en la nube",
+       "Interfaz bilingüe (FR/EN)"
+     ],
+     "metrics": [
+       "Tiempo de respuesta < 200ms",
+       "Conversión +25%",
+       "Satisfacción del cliente 4.8/5"
+     ]
+   },
+   "edunova": {
+     "title": "Edunova",
+     "subtitle": "Plataforma de E-learning",
+     "description": "Una solución moderna de aprendizaje en línea con características avanzadas.",
+     "tech": ["React", "Node.js", "PostgreSQL", "Docker", "Redis"],
+     "features": [
+       "Arquitectura basada en eventos",
+       "Streaming de video optimizado",
+       "Análisis en tiempo real",
+       "Caché distribuido"
+     ],
+     "metrics": [
+       "Soporta más de 5k usuarios concurrentes",
+       "Tiempo de carga -40%",
+       "Engagement +35%"
+     ]
+   },
+   "pets": {
+     "title": "Pets",
+     "subtitle": "Aplicación de Gestión de Mascotas",
+     "description": "Plataforma de gestión para mascotas con funcionalidades avanzadas.",
+     "tech": ["React", "Node.js", "MongoDB", "Express"],
+     "features": [
+       "Sistema de gestión de mascotas",
+       "Perfiles detallados",
+       "Interfaz intuitiva",
+       "API RESTful"
+     ],
+     "metrics": [
+       "Rendimiento optimizado",
+       "UX mejorada",
+       "Arquitectura modular"
+     ]
+   },
+   "portfolio": {
+     "title": "Portfolio",
+     "subtitle": "Sitio Web Personal",
+     "description": "Portfolio profesional con diseño moderno y responsivo.",
+     "tech": ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+     "features": [
+       "Diseño responsivo",
+       "Animaciones fluidas",
+       "Multi-idioma",
+       "Modo oscuro/claro"
+     ],
+     "metrics": [
+       "Rendimiento 95+",
+       "SEO optimizado",
+       "Máxima accesibilidad"
+     ]
+   }
+ },
+ "experience": {
+   "win": {
+     "role": "Desarrollador Full Stack",
+     "company": "Win Technology",
+     "period": "Agosto 2024 - Presente",
+     "achievements": [
+       { "icon": "📊", "text": "Aumentó el compromiso del usuario en un 25%" },
+       { "icon": "⚡", "text": "Redujo el tiempo de respuesta de la API en un 30%" },
+       { "icon": "💻", "text": "Optimización de consultas MongoDB en un 40%" }
+     ]
+   },
+   "artur": {
+     "role": "Desarrollador Backend (Interno)",
+     "company": "Artur.Art",
+     "period": "Julio 2024 - Septiembre 2024",
+     "achievements": [
+       { "icon": "📈", "text": "Mejoró la tasa de conversión en un 40%" },
+       { "icon": "🤝", "text": "Atrajo a más de 100 artistas locales" },
+       { "icon": "📱", "text": "Aumentó el compromiso en un 35%" }
+     ]
+   }
+ },
+ "contact": {
+   "email": { "name": "Correo electrónico" },
+   "linkedin": { "name": "LinkedIn" },
+   "github": { "name": "GitHub" },
+   "sendEmail": "Enviar correo",
+   "downloadCV": "Descargar CV"
+ },
+ "footer": {
+   "copyright": "© {year} Tiago Barros. Todos los derechos reservados."
+ }
+}
