@@ -129,6 +129,23 @@
        "Satisfacción del cliente 4.8/5"
      ]
    },
+   "solutionnet": {
+   "title": "SolutionNet Plus",
+   "subtitle": "Soluciones de Internet y Telefonía",
+   "description": "Proveedor de servicios de Internet y telefonía para empresas y particulares en Quebec.",
+   "tech": ["Laravel", "Vue.js", "MySQL", "Node.js", "Docker"],
+   "features": [
+     "Portal del cliente en tiempo real",
+     "Sistema de facturación automatizado",
+     "Interfaz de gestión de servicios",
+     "Soporte al cliente integrado"
+   ],
+   "metrics": [
+     "Disponibilidad 99.9%",
+     "Soporte 24/7",
+     "+5000 clientes activos"
+   ]
+ },
    "edunova": {
      "title": "Edunova",
      "subtitle": "Plataforma de E-learning",

@@ -129,6 +129,23 @@
         "Satisfaction client 4.8/5"
       ]
     },
+    "solutionnet": {
+      "title": "SolutionNet Plus",
+      "subtitle": "Solutions Internet & Téléphonie",
+      "description": "Fournisseur de services Internet et téléphonie pour entreprises et particuliers au Québec.",
+      "tech": ["Laravel", "Vue.js", "MySQL", "Node.js", "Docker"],
+      "features": [
+        "Portail client en temps réel",
+        "Système de facturation automatisé",
+        "Interface de gestion des services",
+        "Support client intégré"
+      ],
+      "metrics": [
+        "Disponibilité 99.9%",
+        "Support 24/7",
+        "+5000 clients actifs"
+      ]
+    },
     "edunova": {
       "title": "Edunova",
       "subtitle": "Plateforme E-learning",

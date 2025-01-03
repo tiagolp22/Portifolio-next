@@ -8,26 +8,36 @@ import { Card } from '@/components/ui/Card'
 import { useI18n } from '@/contexts/I18nContext'
 
 const projects = [
-  {
-    titleKey: 'projects.quebecar.title',
-    subtitleKey: 'projects.quebecar.subtitle',
-    descriptionKey: 'projects.quebecar.description',
-    image: '/api/placeholder/600/400',
-    techKey: 'projects.quebecar.tech',
-    featuresKey: 'projects.quebecar.features',
-    metricsKey: 'projects.quebecar.metrics',
-    github: 'https://github.com/tiagolp22/projet-web-2-tiagolp22',
-  },
-  {
-    titleKey: 'projects.edunova.title',
-    subtitleKey: 'projects.edunova.subtitle',
-    descriptionKey: 'projects.edunova.description',
-    image: '/api/placeholder/600/400',
-    techKey: 'projects.edunova.tech',
-    featuresKey: 'projects.edunova.features',
-    metricsKey: 'projects.edunova.metrics',
-    github: 'https://github.com/tiagolp22/EDUNOVA',
-  },
+ {
+   titleKey: 'projects.quebecar.title',
+   subtitleKey: 'projects.quebecar.subtitle', 
+   descriptionKey: 'projects.quebecar.description',
+   image: '/images/projects/quebecar.home.png',
+   techKey: 'projects.quebecar.tech',
+   featuresKey: 'projects.quebecar.features',
+   metricsKey: 'projects.quebecar.metrics', 
+   github: 'https://github.com/tiagolp22/projet-web-2-tiagolp22',
+ },
+ {
+   titleKey: 'projects.solutionnet.title',
+   subtitleKey: 'projects.solutionnet.subtitle',
+   descriptionKey: 'projects.solutionnet.description', 
+   image: '/images/projects/solutionnet.png',
+   techKey: 'projects.solutionnet.tech',
+   featuresKey: 'projects.solutionnet.features',
+   metricsKey: 'projects.solutionnet.metrics',
+   github: 'https://github.com/tiagolp22/solution-net',
+ },
+ {
+   titleKey: 'projects.edunova.title',
+   subtitleKey: 'projects.edunova.subtitle',
+   descriptionKey: 'projects.edunova.description',
+   image: '/images/projects/edunova.png', 
+   techKey: 'projects.edunova.tech',
+   featuresKey: 'projects.edunova.features',
+   metricsKey: 'projects.edunova.metrics',
+   github: 'https://github.com/tiagolp22/EDUNOVA',
+ },
 ]
 
 export const Projects = () => {
@@ -46,7 +56,7 @@ export const Projects = () => {
   })
 
   return (
-    <section id="projects" className="py-20">
+    <section id="projets" className="py-20">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -1,7 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['your-domain.com'],
+    domains: ['your-domain.com', 'localhost'],
+    unoptimized: process.env.NODE_ENV === 'development',
+    formats: ['image/webp'],
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '3000',
+        pathname: '/images/**',
+      },
+    ],
   },
   async headers() {
     return [
