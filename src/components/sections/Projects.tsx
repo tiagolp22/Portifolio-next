@@ -6,53 +6,17 @@ import { Modal } from '@/components/ui/Modal'
 import { ProjectDetails } from '@/components/projects/ProjectDetails'
 import { Card } from '@/components/ui/Card'
 import { useI18n } from '@/contexts/I18nContext'
-
-const projects = [
- {
-   titleKey: 'projects.quebecar.title',
-   subtitleKey: 'projects.quebecar.subtitle', 
-   descriptionKey: 'projects.quebecar.description',
-   image: '/images/projects/quebecar.home.png',
-   techKey: 'projects.quebecar.tech',
-   featuresKey: 'projects.quebecar.features',
-   metricsKey: 'projects.quebecar.metrics', 
-   github: 'https://github.com/tiagolp22/projet-web-2-tiagolp22',
- },
- {
-   titleKey: 'projects.solutionnet.title',
-   subtitleKey: 'projects.solutionnet.subtitle',
-   descriptionKey: 'projects.solutionnet.description', 
-   image: '/images/projects/solutionnet.png',
-   techKey: 'projects.solutionnet.tech',
-   featuresKey: 'projects.solutionnet.features',
-   metricsKey: 'projects.solutionnet.metrics',
-   github: 'https://github.com/tiagolp22/solution-net',
- },
- {
-   titleKey: 'projects.edunova.title',
-   subtitleKey: 'projects.edunova.subtitle',
-   descriptionKey: 'projects.edunova.description',
-   image: '/images/projects/edunova.png', 
-   techKey: 'projects.edunova.tech',
-   featuresKey: 'projects.edunova.features',
-   metricsKey: 'projects.edunova.metrics',
-   github: 'https://github.com/tiagolp22/EDUNOVA',
- },
-]
+import { projects } from '@/constants/projects'
 
 export const Projects = () => {
   const { t } = useI18n()
-  const [selectedProject, setSelectedProject] = useState<null | typeof projects[0]>(null)
+  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null)
 
   const getProjectDetails = (project: typeof projects[0]) => ({
+    ...project,
     title: t(project.titleKey),
     subtitle: t(project.subtitleKey),
     description: t(project.descriptionKey),
-    image: project.image,
-    tech: t(project.techKey, { returnObjects: true }) as unknown as string[],
-    features: t(project.featuresKey, { returnObjects: true }) as unknown as string[],
-    metrics: t(project.metricsKey, { returnObjects: true }) as unknown as string[],
-    github: project.github,
   })
 
   return (
@@ -83,7 +47,7 @@ export const Projects = () => {
               onClick={() => setSelectedProject(project)}
               className="cursor-pointer"
             >
-              <Card className="h-full group">
+              <Card className="h-full group hover:border-[rgb(var(--highlight))] transition-colors">
                 <Image 
                   src={project.image}
                   alt={t(project.titleKey)}

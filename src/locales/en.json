@@ -1,233 +1,25 @@
 {
-  "meta": {
-    "title": "Tiago Barros | Portfolio",
-    "description": "Portfolio of Tiago Barros - Full Stack Developer specialized in React, Node.js and TypeScript.",
-    "keywords": "developer, full stack, react, node.js, typescript"
-  },
-  "nav": {
-    "skills": "Skills",
-    "projects": "Projects",
-    "experience": "Experience",
-    "contact": "Contact"
-  },
-  "hero": {
-    "name": "Tiago Barros",
-    "title": "Full Stack Developer",
-    "subtitle": "Passionate about creating modern and efficient web applications",
-    "cta": {
-      "projects": "View projects",
-      "contact": "Contact"
-    }
-  },
   "sections": {
-    "skills": {
-      "title": "Skills",
-      "subtitle": "Technical expertise and mastered technologies",
-      "noData": "No data available for this category.",
-      "categories": {
-        "frontend": {
-          "title": "Frontend Development",
-          "skills": [
-            {
-              "name": "React",
-              "level": "Expert",
-              "description": "Performance, Advanced Hooks, Redux"
-            },
-            {
-              "name": "TypeScript",
-              "level": "Expert",
-              "description": "Types, Optimization"
-            },
-            {
-              "name": "HTML5/CSS3",
-              "level": "Expert",
-              "description": "SASS, Responsive Design"
-            },
-            {
-              "name": "Angular",
-              "level": "Intermediate",
-              "description": "Components, Services"
-            }
-          ]
-        },
-        "backend": {
-          "title": "Backend Development",
-          "skills": [
-            {
-              "name": "Node.js",
-              "level": "Expert",
-              "description": "Express.js, REST APIs"
-            },
-            {
-              "name": "PHP",
-              "level": "Expert",
-              "description": "Laravel, Symfony"
-            },
-            {
-              "name": "Java",
-              "level": "Intermediate",
-              "description": "Spring Boot"
-            }
-          ]
-        },
-        "database": {
-          "title": "Database & DevOps",
-          "skills": [
-            {
-              "name": "MongoDB",
-              "level": "Expert",
-              "description": "Aggregation, Performance"
-            },
-            {
-              "name": "MySQL/MariaDB",
-              "level": "Expert",
-              "description": "Optimization, Indexing"
-            },
-            {
-              "name": "PostgreSQL",
-              "level": "Advanced",
-              "description": "Query Optimization"
-            },
-            {
-              "name": "Docker",
-              "level": "Advanced",
-              "description": "Containerization, Compose"
-            }
-          ]
-        }
-      }
-    },
     "projects": {
-      "title": "Featured Projects",
+      "title": "Projects",
       "subtitle": "Discover my latest achievements"
-    },
-    "experience": {
-      "title": "Experience",
-      "subtitle": "My professional journey"
-    },
-    "contact": {
-      "title": "Contact",
-      "subtitle": "Available for opportunities",
-      "availability": "Open for freelance and full-time opportunities"
     }
   },
   "projects": {
-    "quebecar": {
-      "title": "Québecar",
-      "subtitle": "Automotive E-commerce",
-      "description": "An innovative bilingual platform that revolutionizes car buying and selling.",
-      "tech": ["Laravel", "React", "MySQL", "Stripe", "Cloudinary"],
-      "features": [
-        "Scalable microservices architecture",
-        "Secure Stripe integration",
-        "Cloud media management system",
-        "Bilingual interface (FR/EN)"
-      ],
-      "metrics": [
-        "Response time < 200ms",
-        "Conversion +25%",
-        "Customer satisfaction 4.8/5"
-      ]
-    },
     "solutionnet": {
-    "title": "SolutionNet Plus",
-    "subtitle": "Internet & Telephony Solutions",
-    "description": "Internet and telephony service provider for businesses and individuals in Quebec.",
-    "tech": ["Laravel", "Vue.js", "MySQL", "Node.js", "Docker"],
-    "features": [
-      "Real-time customer portal",
-      "Automated billing system", 
-      "Service management interface",
-      "Integrated customer support"
-    ],
-    "metrics": [
-      "99.9% uptime",
-      "24/7 support",
-      "+5000 active customers"
-    ]
-  },
+      "title": "SolutionNet Plus",
+      "subtitle": "Internet & Telephony Solutions",
+      "description": "A comprehensive web application for SolutionNet Plus, a Quebec-based HVAC service company. Features online appointment booking, automated scheduling, and multilingual support."
+    },
+    "quebecar": {
+      "title": "QuebeCar",
+      "subtitle": "Car Sales Platform",
+      "description": "An innovative bilingual car sales platform built with Laravel and React, featuring secure payments, media management, and comprehensive vehicle listings."
+    },
     "edunova": {
-      "title": "Edunova",
-      "subtitle": "E-learning Platform",
-      "description": "A modern online learning solution with advanced features.",
-      "tech": ["React", "Node.js", "PostgreSQL", "Docker", "Redis"],
-      "features": [
-        "Event-driven architecture",
-        "Optimized video streaming",
-        "Real-time analytics",
-        "Distributed cache"
-      ],
-      "metrics": [
-        "Supports 5k+ concurrent users",
-        "Loading time -40%",
-        "Engagement +35%"
-      ]
-    },
-    "pets": {
-      "title": "Pets",
-      "subtitle": "Pet Management Application",
-      "description": "Pet management platform with advanced features.",
-      "tech": ["React", "Node.js", "MongoDB", "Express"],
-      "features": [
-        "Pet management system",
-        "Detailed profiles",
-        "Intuitive interface",
-        "RESTful API"
-      ],
-      "metrics": [
-        "Optimized performance",
-        "Enhanced UX",
-        "Modular architecture"
-      ]
-    },
-    "portfolio": {
-      "title": "Portfolio",
-      "subtitle": "Personal Website",
-      "description": "Professional portfolio with modern and responsive design.",
-      "tech": ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-      "features": [
-        "Responsive design",
-        "Smooth animations",
-        "Multi-language",
-        "Dark/Light mode"
-      ],
-      "metrics": [
-        "Performance 95+",
-        "SEO optimized",
-        "Maximum accessibility"
-      ]
+      "title": "Edunova LMS",
+      "subtitle": "Learning Management System",
+      "description": "A modern education platform with microservices architecture, supporting video streaming, course management, and real-time progress tracking."
     }
-  },
-  "experience": {
-    "win": {
-      "role": "Full Stack Developer",
-      "company": "Win Technology",
-      "period": "August 2024 - Present",
-      "achievements": [
-        { "icon": "📊", "text": "Increased user engagement by 25%" },
-        { "icon": "⚡", "text": "Reduced API response time by 30%" },
-        { "icon": "💻", "text": "Optimized MongoDB queries by 40%" }
-      ]
-    },
-    "artur": {
-      "role": "Backend Developer (Intern)",
-      "company": "Artur.Art",
-      "period": "July 2024 - September 2024",
-      "achievements": [
-        { "icon": "📈", "text": "Improved conversion rate by 40%" },
-        { "icon": "🤝", "text": "Attracted over 100 local artists" },
-        { "icon": "📱", "text": "Increased engagement by 35%" }
-      ]
-    }
-  },
-  "contact": {
-    "email": { "name": "Email" },
-    "linkedin": { "name": "LinkedIn" },
-    "github": { "name": "GitHub" },
-    "sendEmail": "Send Email",
-    "downloadCV": "Download CV"
-  },
-  "footer": {
-    "copyright": "© {year} Tiago Barros. All rights reserved."
   }
 }
