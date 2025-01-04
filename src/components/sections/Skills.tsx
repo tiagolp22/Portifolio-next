@@ -1,152 +1,147 @@
-'use client'
-import { useState } from 'react'
-import { Card } from '@/components/ui/Card'
-import { Code, Server, Database } from 'lucide-react'
-import { motion } from 'framer-motion'
-import { useI18n } from '@/contexts/I18nContext'
-
-interface Skill {
-  name: string
-  level: string
-  description: string
-}
-
-interface CategoryData {
-  title: string
-  skills: Skill[]
-}
-
-interface CategorySkills {
-  title: string
-  skills: Array<{
-    name: string
-    level: string
-    description: string
-  }>
-}
+'use client';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useI18n } from '@/contexts/I18nContext';
+import { skillCategories } from '@/constants/skills';
 
 export const Skills = () => {
-  const { t } = useI18n()
-  const [activeCategory, setActiveCategory] = useState('frontend')
+  const { t } = useI18n();
+  const [mounted, setMounted] = useState(false);
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
-  const getCategoryData = (key: string): CategoryData | null => {
-    try {
-      const title = t<string>(`sections.skills.categories.${key}.title`)
-      const data = t<CategorySkills>(`sections.skills.categories.${key}`, { returnObjects: true })
-      
-      if (title && data.skills?.length > 0) {
-        return {
-          title,
-          skills: data.skills.map(skill => ({
-            name: skill.name || '',
-            level: skill.level || '',
-            description: skill.description || ''
-          }))
-        }
-      }
-      
-      return null
-    } catch (error) {
-      console.error(`Error loading data for ${key}:`, error)
-      return null
+  // Primeiro mount
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Definir categoria inicial após montagem
+  useEffect(() => {
+    if (mounted) {
+      setActiveCategory('frontend');
     }
-  }
+  }, [mounted]);
 
-  const categories = {
-    frontend: {
-      icon: <Code className="w-6 h-6" />,
-      data: getCategoryData('frontend')
-    },
-    backend: {
-      icon: <Server className="w-6 h-6" />,
-      data: getCategoryData('backend')
-    },
-    database: {
-      icon: <Database className="w-6 h-6" />,
-      data: getCategoryData('database')
-    }
+  if (!mounted) {
+    return (
+      <section id="competences" className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4 text-[rgb(var(--foreground))]">
+              {t('sections.skills.title')}
+            </h2>
+            <p className="text-[rgb(var(--muted))]">
+              {t('sections.skills.subtitle')}
+            </p>
+          </div>
+        </div>
+      </section>
+    );
   }
-
-  const activeCategoryData = categories[activeCategory as keyof typeof categories].data
 
   return (
     <section id="competences" className="py-20">
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            {t<string>('sections.skills.title')}
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold mb-4 text-[rgb(var(--foreground))]">
+            {t('sections.skills.title')}
           </h2>
           <p className="text-[rgb(var(--muted))]">
-            {t<string>('sections.skills.subtitle')}
+            {t('sections.skills.subtitle')}
           </p>
-        </motion.div>
-
-        <div className="flex justify-center gap-4 mb-12 flex-wrap">
-          {Object.entries(categories).map(([key, category]) => (
-            <button
-              key={key}
-              onClick={() => setActiveCategory(key)}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${
-                activeCategory === key
-                  ? 'bg-[rgb(var(--highlight))] text-white'
-                  : 'border border-[rgb(var(--card-border))] text-[rgb(var(--foreground))] hover:bg-[rgb(var(--button-hover))]'
-              }`}
-            >
-              <span
-                className={activeCategory === key ? 'text-white' : 'text-[rgb(var(--highlight))]'}
-              >
-                {category.icon}
-              </span>
-              <span>{category.data?.title || t<string>('sections.skills.noData')}</span>
-            </button>
-          ))}
         </div>
 
-        {activeCategoryData?.skills ? (
-          <div className="grid gap-6 max-w-4xl mx-auto">
-            {activeCategoryData.skills.map((skill, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+        {/* Navigation Tabs */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-12 px-2">
+          {skillCategories.map((category) => {
+            const Icon = category.icon;
+            return (
+              <button
+                key={category.id}
+                onClick={() => setActiveCategory(category.id)}
+                className={`
+                  flex items-center justify-center sm:justify-start
+                  px-4 py-3 rounded-lg
+                  transition-colors duration-200 ease-in-out
+                  ${activeCategory === category.id 
+                    ? 'bg-[rgb(var(--highlight))] text-white'
+                    : 'bg-[rgb(var(--card-background))] hover:bg-[rgb(var(--button-hover))]'
+                  }
+                `}
               >
-                <Card className="p-6 hover:border-[rgb(var(--highlight))] transition-colors">
-                  <div className="flex items-center justify-between">
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold text-[rgb(var(--foreground))]">
-                        {skill.name}
-                      </h3>
-                      <span className="text-[rgb(var(--highlight))]">{skill.description}</span>
-                    </div>
-                    <span
-                      className={`px-3 py-1 rounded-full text-sm ${
-                        skill.level === 'Expert' || skill.level === 'Experto' || skill.level === 'Avancé'
-                          ? 'bg-blue-500 text-white'
-                          : skill.level === 'Advanced' || skill.level === 'Avanzado' || skill.level === 'Avançado'
-                          ? 'bg-blue-400 text-white'
-                          : 'bg-blue-300 text-white'
-                      }`}
+                <Icon className="w-5 h-5 mr-2" />
+                <span>{t(`sections.skills.${category.id}`)}</span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Skills Grid */}
+        <div className="relative">
+          <AnimatePresence mode="wait">
+            {activeCategory && (
+              <motion.div
+                key={activeCategory}
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                {skillCategories
+                  .find(cat => cat.id === activeCategory)
+                  ?.skills.map((skill, index) => (
+                    <motion.div
+                      key={skill.name}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      className="group relative"
                     >
-                      {skill.level}
-                    </span>
-                  </div>
-                </Card>
+                      <div className="bg-[rgb(var(--card-background))] rounded-xl p-4 border border-[rgb(var(--card-border))] h-full">
+                        <div className={`bg-gradient-to-br ${skill.gradient.from} ${skill.gradient.to} w-16 h-16 rounded-lg p-3 mb-4 mx-auto flex items-center justify-center`}>
+                          <skill.icon className="w-10 h-10 text-white" />
+                        </div>
+
+                        <h3 className="text-lg font-bold text-center mb-2">
+                          {skill.name}
+                        </h3>
+
+                        <div className="flex flex-wrap gap-2 justify-center">
+                          {skill.tags.map((tag, idx) => (
+                            <span
+                              key={idx}
+                              className={`px-3 py-1 rounded-full text-sm ${
+                                idx === 1
+                                  ? 'bg-[rgb(var(--highlight))] text-white'
+                                  : 'bg-[rgb(var(--card-background))] border border-[rgb(var(--card-border))]'
+                              }`}
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+
+                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-br from-[rgb(var(--highlight))] to-[rgb(var(--accent))] rounded-xl transition-opacity duration-200 p-4 flex items-center justify-center">
+                          <p className="text-white text-center text-sm">
+                            {t(getSkillTranslationKey(activeCategory, skill.name))}
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
               </motion.div>
-            ))}
-          </div>
-        ) : (
-          <p className="text-center text-[rgb(var(--muted))]">
-            {t<string>('sections.skills.noData')}
-          </p>
-        )}
+            )}
+          </AnimatePresence>
+        </div>
       </div>
     </section>
-  )
-}
+  );
+};
+
+const getSkillTranslationKey = (category: string, skillName: string) => {
+  const normalizedSkillName = skillName
+    .toLowerCase()
+    .replace(/[/.]/g, '')
+    .replace(/\s+/g, '');
+  return `sections.skills.categories.${category}.${normalizedSkillName}.description`;
+};

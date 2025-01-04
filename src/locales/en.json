@@ -1,25 +1,214 @@
 {
+  "meta": {
+    "title": "Tiago Barros | Portfolio",
+    "description": "Portfolio of Tiago Barros - Full Stack Developer specialized in React, Node.js and TypeScript.",
+    "keywords": "developer, full stack, react, node.js, typescript"
+  },
+  "nav": {
+    "home": "Home",
+    "skills": "Skills",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "hero": {
+    "name": "Tiago Barros",
+    "title": "Full Stack Developer",
+    "subtitle": "Passionate about creating modern and efficient web applications",
+    "cta": {
+      "projects": "View Projects",
+      "contact": "Contact Me"
+    }
+  },
   "sections": {
+    "skills": {
+      "title": "Technical Skills",
+      "subtitle": "A comprehensive overview of my technical expertise",
+      "frontend": "Frontend Development",
+      "backend": "Backend Development",
+      "database": "Database & DevOps",
+      "testing": "Testing & QA",
+      "categories": {
+        "frontend": {
+          "title": "Frontend Development",
+          "react": {
+            "description": "Advanced expertise in building scalable React applications with modern practices and performance optimization"
+          },
+          "typescript": {
+            "description": "Strong typing and interface design for robust application development"
+          },
+          "nextjs": {
+            "description": "Server-side rendering, API routes, and optimized React applications"
+          },
+          "angular": {
+            "description": "Building enterprise applications with components, services, and RxJS"
+          }
+        },
+        "backend": {
+          "title": "Backend Development",
+          "nodejs": {
+            "description": "Building scalable server applications with Express.js and REST APIs"
+          },
+          "phplaravel": {
+            "description": "Developing web applications with Laravel, MVC, and Eloquent ORM"
+          },
+          "apidesign": {
+            "description": "Creating and maintaining scalable RESTful and GraphQL APIs"
+          },
+          "microservices": {
+            "description": "Designing and implementing distributed microservices architecture"
+          }
+        },
+        "database": {
+          "title": "Database & DevOps",
+          "mongodb": {
+            "description": "NoSQL database design with aggregation pipelines and indexing"
+          },
+          "postgresql": {
+            "description": "Advanced SQL database management and query optimization"
+          },
+          "redis": {
+            "description": "In-memory caching, pub/sub, and session management"
+          },
+          "docker": {
+            "description": "Container orchestration, deployment, and CI/CD integration"
+          }
+        },
+        "testing": {
+          "title": "Testing & QA",
+          "jest": {
+            "description": "Unit and integration testing with mocking and code coverage"
+          },
+          "testinglibrary": {
+            "description": "Testing React components with user-centric approach"
+          },
+          "cypress": {
+            "description": "End-to-end testing and component testing automation"
+          },
+          "security": {
+            "description": "Security testing and implementation of OWASP best practices"
+          }
+        }
+      }
+    },
     "projects": {
-      "title": "Projects",
-      "subtitle": "Discover my latest achievements"
+      "title": "Featured Projects",
+      "subtitle": "Discover my latest achievements",
+      "viewSource": "View Source",
+      "visitWebsite": "Visit Website"
+    },
+    "experience": {
+      "title": "Experience",
+      "subtitle": "My professional journey",
+      "current": "Present"
+    },
+    "contact": {
+      "title": "Let's Connect",
+      "subtitle": "I'm always interested in hearing about new projects and opportunities",
+      "availability": "Available for freelance and full-time opportunities"
     }
   },
   "projects": {
-    "solutionnet": {
-      "title": "SolutionNet Plus",
-      "subtitle": "Internet & Telephony Solutions",
-      "description": "A comprehensive web application for SolutionNet Plus, a Quebec-based HVAC service company. Features online appointment booking, automated scheduling, and multilingual support."
-    },
     "quebecar": {
       "title": "QuebeCar",
       "subtitle": "Car Sales Platform",
-      "description": "An innovative bilingual car sales platform built with Laravel and React, featuring secure payments, media management, and comprehensive vehicle listings."
+      "description": "An innovative bilingual car sales platform built with Laravel and React",
+      "tech": ["Laravel", "React", "MySQL", "Stripe", "Cloudinary"],
+      "features": [
+        "Scalable microservices architecture",
+        "Secure Stripe integration",
+        "Cloud media management",
+        "Bilingual interface (FR/EN)"
+      ],
+      "metrics": [
+        "Response time < 200ms",
+        "Conversion +25%",
+        "Customer satisfaction 4.8/5"
+      ]
+    },
+    "solutionnet": {
+      "title": "SolutionNet Plus",
+      "subtitle": "Internet & Telephony Solutions",
+      "description": "Internet and telephony service provider for Quebec businesses",
+      "tech": ["Laravel", "Vue.js", "MySQL", "Node.js", "Docker"],
+      "features": [
+        "Real-time customer portal",
+        "Automated billing system",
+        "Service management interface",
+        "Integrated customer support"
+      ],
+      "metrics": [
+        "99.9% uptime",
+        "24/7 support",
+        "+5000 active customers"
+      ],
+      "customDetails": {
+        "role": "Front-end Developer at Win Technology",
+        "contributions": [
+          "Developed dynamic JavaScript carousel",
+          "Implemented interactive appointment booking system",
+          "Created email confirmation system",
+          "Integrated multilingual support"
+        ]
+      }
     },
     "edunova": {
-      "title": "Edunova LMS",
-      "subtitle": "Learning Management System",
-      "description": "A modern education platform with microservices architecture, supporting video streaming, course management, and real-time progress tracking."
+      "title": "Edunova",
+      "subtitle": "E-learning Platform",
+      "description": "Modern online learning solution with advanced features",
+      "tech": ["React", "Node.js", "PostgreSQL", "Docker", "Redis"],
+      "features": [
+        "Event-driven architecture",
+        "Video streaming optimization",
+        "Real-time analytics",
+        "Distributed caching"
+      ],
+      "metrics": [
+        "Supports 5k+ users",
+        "Loading time -40%",
+        "Engagement +35%"
+      ]
     }
+  },
+  "experience": {
+    "win": {
+      "role": "Full Stack Developer",
+      "company": "Win Technology",
+      "period": "August 2024 - Present",
+      "achievements": [
+        { "icon": "📊", "text": "Increased user engagement by 25%" },
+        { "icon": "⚡", "text": "Reduced API response time by 30%" },
+        { "icon": "💻", "text": "Optimized MongoDB queries by 40%" }
+      ]
+    },
+    "artur": {
+      "role": "Backend Developer (Intern)",
+      "company": "Artur.Art",
+      "period": "July 2024 - September 2024",
+      "achievements": [
+        { "icon": "📈", "text": "Improved conversion rate by 40%" },
+        { "icon": "🤝", "text": "Attracted over 100 local artists" },
+        { "icon": "📱", "text": "Increased engagement by 35%" }
+      ]
+    }
+  },
+  "contact": {
+    "email": {
+      "name": "Email",
+      "value": "tiagobarroscavalcanti@gmail.com"
+    },
+    "linkedin": {
+      "name": "LinkedIn",
+      "value": "linkedin.com/in/tiago-barros-cav"
+    },
+    "github": {
+      "name": "GitHub",
+      "value": "github.com/tiagolp22"
+    },
+    "sendEmail": "Send Email",
+    "downloadCV": "Download CV"
+  },
+  "footer": {
+    "copyright": "© {year} Tiago Barros. All rights reserved."
   }
 }

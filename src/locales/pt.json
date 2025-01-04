@@ -5,6 +5,7 @@
     "keywords": "desenvolvedor, full stack, react, node.js, typescript"
   },
   "nav": {
+    "home": "Início",
     "skills": "Habilidades",
     "projects": "Projetos",
     "experience": "Experiência",
@@ -21,106 +22,102 @@
   },
   "sections": {
     "skills": {
-      "title": "Habilidades",
-      "subtitle": "Expertise técnica e tecnologias dominadas",
-      "noData": "Nenhum dado disponível para esta categoria.",
+      "title": "Habilidades Técnicas",
+      "subtitle": "Uma visão abrangente da minha experiência técnica",
+      "frontend": "Desenvolvimento Frontend",
+      "backend": "Desenvolvimento Backend",
+      "database": "Banco de Dados e DevOps",
+      "testing": "Testes e QA",
       "categories": {
         "frontend": {
           "title": "Desenvolvimento Frontend",
-          "skills": [
-            {
-              "name": "React",
-              "level": "Expert",
-              "description": "Performance, Hooks Avançados, Redux"
-            },
-            {
-              "name": "TypeScript",
-              "level": "Expert",
-              "description": "Types, Otimização"
-            },
-            {
-              "name": "HTML5/CSS3",
-              "level": "Expert",
-              "description": "SASS, Design Responsivo"
-            },
-            {
-              "name": "Angular",
-              "level": "Intermediário",
-              "description": "Componentes, Serviços"
-            }
-          ]
+          "react": {
+            "description": "Experiência avançada na construção de aplicações React escaláveis com práticas modernas"
+          },
+          "typescript": {
+            "description": "Tipagem forte e design de interfaces para aplicações robustas"
+          },
+          "nextjs": {
+            "description": "Renderização no servidor, rotas API e otimização de aplicações React"
+          },
+          "angular": {
+            "description": "Desenvolvimento de aplicações empresariais com componentes, serviços e RxJS"
+          }
         },
         "backend": {
           "title": "Desenvolvimento Backend",
-          "skills": [
-            {
-              "name": "Node.js",
-              "level": "Expert",
-              "description": "Express.js, APIs REST"
-            },
-            {
-              "name": "PHP",
-              "level": "Expert",
-              "description": "Laravel, Symfony"
-            },
-            {
-              "name": "Java",
-              "level": "Intermediário",
-              "description": "Spring Boot"
-            }
-          ]
+          "nodejs": {
+            "description": "Construção de aplicações servidor escaláveis com Express.js e APIs REST"
+          },
+          "phplaravel": {
+            "description": "Desenvolvimento de aplicações web com Laravel, MVC e Eloquent ORM"
+          },
+          "apidesign": {
+            "description": "Criação e manutenção de APIs RESTful e GraphQL escaláveis"
+          },
+          "microservices": {
+            "description": "Design e implementação de arquitetura de microsserviços distribuída"
+          }
         },
         "database": {
           "title": "Banco de Dados e DevOps",
-          "skills": [
-            {
-              "name": "MongoDB",
-              "level": "Expert",
-              "description": "Agregação, Performance"
-            },
-            {
-              "name": "MySQL/MariaDB",
-              "level": "Expert",
-              "description": "Otimização, Indexação"
-            },
-            {
-              "name": "PostgreSQL",
-              "level": "Avançado",
-              "description": "Otimização de queries"
-            },
-            {
-              "name": "Docker",
-              "level": "Avançado",
-              "description": "Conteinerização, Compose"
-            }
-          ]
+          "mongodb": {
+            "description": "Design de bases NoSQL com pipelines de agregação e indexação"
+          },
+          "postgresql": {
+            "description": "Gestão avançada de bases SQL e otimização de queries"
+          },
+          "redis": {
+            "description": "Cache em memória, pub/sub e gestão de sessões"
+          },
+          "docker": {
+            "description": "Orquestração de contêineres, deploy e integração CI/CD"
+          }
+        },
+        "testing": {
+          "title": "Testes e QA",
+          "jest": {
+            "description": "Testes unitários e de integração com mock e cobertura de código"
+          },
+          "testinglibrary": {
+            "description": "Testes de componentes React com abordagem centrada no usuário"
+          },
+          "cypress": {
+            "description": "Testes end-to-end e automatização de testes de componentes"
+          },
+          "security": {
+            "description": "Testes de segurança e implementação das melhores práticas OWASP"
+          }
         }
       }
     },
     "projects": {
       "title": "Projetos em Destaque",
-      "subtitle": "Conheça minhas últimas realizações"
+      "subtitle": "Conheça minhas últimas realizações",
+      "viewSource": "Ver código",
+      "visitWebsite": "Visitar site"
     },
     "experience": {
       "title": "Experiência",
-      "subtitle": "Minha jornada profissional"
+      "subtitle": "Minha jornada profissional",
+      "current": "Presente"
     },
     "contact": {
-      "title": "Contato",
-      "subtitle": "Disponível para oportunidades",
-      "availability": "Aberto a oportunidades freelance e tempo integral"
+      "title": "Vamos Conversar",
+      "subtitle": "Estou sempre interessado em novos projetos e oportunidades",
+      "availability": "Disponível para projetos freelance e posições em tempo integral"
     }
   },
   "projects": {
     "quebecar": {
-      "title": "Québecar",
-      "subtitle": "E-commerce Automotivo",
-      "description": "Uma plataforma bilíngue inovadora que revoluciona a compra e venda de carros.",
+      "title": "QuebeCar",
+      "subtitle": "Plataforma de Venda de Carros",
+      "description": "Uma plataforma bilíngue inovadora de venda de carros criada com Laravel e React",
       "tech": ["Laravel", "React", "MySQL", "Stripe", "Cloudinary"],
       "features": [
         "Arquitetura de microsserviços escalável",
         "Integração segura com Stripe",
-        "Sistema de gerenciamento de mídia na nuvem",
+        "Gestão de mídia na nuvem",
         "Interface bilíngue (FR/EN)"
       ],
       "metrics": [
@@ -129,84 +126,59 @@
         "Satisfação do cliente 4.8/5"
       ]
     },
- "solutionnet": {
-   "title": "SolutionNet Plus",
-   "subtitle": "Soluções de Internet & Telefonia",
-   "description": "Provedor de serviços de Internet e telefonia para empresas e particulares em Quebec.",
-   "tech": ["Laravel", "Vue.js", "MySQL", "Node.js", "Docker"],
-   "features": [
-     "Portal do cliente em tempo real",
-     "Sistema de faturamento automatizado", 
-     "Interface de gerenciamento de serviços",
-     "Suporte ao cliente integrado"
-   ],
-   "metrics": [
-     "Disponibilidade 99.9%",
-     "Suporte 24/7",
-     "+5000 clientes ativos"
-   ]
- },
+    "solutionnet": {
+      "title": "SolutionNet Plus",
+      "subtitle": "Soluções de Internet e Telefonia",
+      "description": "Provedor de serviços de Internet e telefonia para empresas em Quebec",
+      "tech": ["Laravel", "Vue.js", "MySQL", "Node.js", "Docker"],
+      "features": [
+        "Portal do cliente em tempo real",
+        "Sistema de faturamento automatizado",
+        "Interface de gestão de serviços",
+        "Suporte ao cliente integrado"
+      ],
+      "metrics": [
+        "99.9% de disponibilidade",
+        "Suporte 24/7",
+        "+5000 clientes ativos"
+      ],
+      "customDetails": {
+        "role": "Desenvolvedor Front-end na Win Technology",
+        "contributions": [
+          "Desenvolvimento do carrossel JavaScript dinâmico",
+          "Implementação do sistema de agendamento interativo",
+          "Criação do sistema de confirmação por email",
+          "Integração do suporte multilíngue"
+        ]
+      }
+    },
     "edunova": {
       "title": "Edunova",
-      "subtitle": "Plataforma de E-learning",
-      "description": "Uma solução moderna de aprendizado online com recursos avançados.",
+      "subtitle": "Plataforma E-learning",
+      "description": "Solução moderna de aprendizado online com recursos avançados",
       "tech": ["React", "Node.js", "PostgreSQL", "Docker", "Redis"],
       "features": [
         "Arquitetura orientada a eventos",
-        "Streaming de vídeo otimizado",
+        "Otimização de streaming de vídeo",
         "Análise em tempo real",
         "Cache distribuído"
       ],
       "metrics": [
-        "Suporte para 5k+ usuários simultâneos",
+        "Suporta 5k+ usuários",
         "Tempo de carregamento -40%",
         "Engajamento +35%"
-      ]
-    },
-    "pets": {
-      "title": "Pets",
-      "subtitle": "Sistema de Gestão de Pets",
-      "description": "Plataforma de gerenciamento para animais de estimação com funcionalidades avançadas.",
-      "tech": ["React", "Node.js", "MongoDB", "Express"],
-      "features": [
-        "Sistema de gestão de pets",
-        "Perfis detalhados",
-        "Interface intuitiva",
-        "API RESTful"
-      ],
-      "metrics": [
-        "Performance otimizada",
-        "UX aprimorada",
-        "Arquitetura modular"
-      ]
-    },
-    "portfolio": {
-      "title": "Portfólio",
-      "subtitle": "Site Pessoal",
-      "description": "Portfólio profissional com design moderno e responsivo.",
-      "tech": ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-      "features": [
-        "Design responsivo",
-        "Animações fluidas",
-        "Multi-idioma",
-        "Modo escuro/claro"
-      ],
-      "metrics": [
-        "Performance 95+",
-        "SEO otimizado",
-        "Máxima acessibilidade"
       ]
     }
   },
   "experience": {
     "win": {
       "role": "Desenvolvedor Full Stack",
-      "company": "Win Tecnologia",
+      "company": "Win Technology",
       "period": "Agosto 2024 - Presente",
       "achievements": [
-        { "icon": "📊", "text": "Aumento de 25% no engajamento do usuário" },
-        { "icon": "⚡", "text": "Redução de 30% no tempo de resposta da API" },
-        { "icon": "💻", "text": "Otimização de consultas no MongoDB em 40%" }
+        { "icon": "📊", "text": "Aumento do engajamento do usuário em 25%" },
+        { "icon": "⚡", "text": "Redução do tempo de resposta da API em 30%" },
+        { "icon": "💻", "text": "Otimização de queries MongoDB em 40%" }
       ]
     },
     "artur": {
@@ -214,16 +186,25 @@
       "company": "Artur.Art",
       "period": "Julho 2024 - Setembro 2024",
       "achievements": [
-        { "icon": "📈", "text": "Melhoria de 40% na taxa de conversão" },
+        { "icon": "📈", "text": "Melhoria na taxa de conversão em 40%" },
         { "icon": "🤝", "text": "Atração de mais de 100 artistas locais" },
-        { "icon": "📱", "text": "Aumento de 35% no engajamento" }
+        { "icon": "📱", "text": "Aumento do engajamento em 35%" }
       ]
     }
   },
   "contact": {
-    "email": { "name": "Email" },
-    "linkedin": { "name": "LinkedIn" },
-    "github": { "name": "GitHub" },
+    "email": {
+      "name": "Email",
+      "value": "tiagobarroscavalcanti@gmail.com"
+    },
+    "linkedin": {
+      "name": "LinkedIn",
+      "value": "linkedin.com/in/tiago-barros-cav"
+    },
+    "github": {
+      "name": "GitHub",
+      "value": "github.com/tiagolp22"
+    },
     "sendEmail": "Enviar Email",
     "downloadCV": "Baixar CV"
   },

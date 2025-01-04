@@ -5,6 +5,7 @@
     "keywords": "développeur, full stack, react, node.js, typescript"
   },
   "nav": {
+    "home": "Accueil",
     "skills": "Compétences",
     "projects": "Projets",
     "experience": "Expérience",
@@ -15,112 +16,108 @@
     "title": "Développeur Full Stack",
     "subtitle": "Passionné par la création d'applications web modernes et performantes",
     "cta": {
-      "projects": "Voir mes projets",
+      "projects": "Voir les projets",
       "contact": "Me contacter"
     }
   },
   "sections": {
     "skills": {
-      "title": "Compétences",
-      "subtitle": "Expertise technique et technologies maîtrisées",
-      "noData": "Aucune donnée disponible pour cette catégorie.",
+      "title": "Compétences Techniques",
+      "subtitle": "Un aperçu complet de mon expertise technique",
+      "frontend": "Développement Frontend",
+      "backend": "Développement Backend",
+      "database": "Base de Données & DevOps",
+      "testing": "Tests & QA",
       "categories": {
         "frontend": {
           "title": "Développement Frontend",
-          "skills": [
-            {
-              "name": "React",
-              "level": "Expert",
-              "description": "Performance, Hooks Avancés, Redux"
-            },
-            {
-              "name": "TypeScript",
-              "level": "Expert",
-              "description": "Types, Optimisation"
-            },
-            {
-              "name": "HTML5/CSS3",
-              "level": "Expert",
-              "description": "SASS, Responsive Design"
-            },
-            {
-              "name": "Angular",
-              "level": "Intermédiaire",
-              "description": "Components, Services"
-            }
-          ]
+          "react": {
+            "description": "Expertise avancée dans le développement d'applications React avec des pratiques modernes"
+          },
+          "typescript": {
+            "description": "Typage fort et conception d'interfaces pour des applications robustes"
+          },
+          "nextjs": {
+            "description": "Rendu côté serveur, routes API et optimisation des applications React"
+          },
+          "angular": {
+            "description": "Développement d'applications entreprise avec composants, services et RxJS"
+          }
         },
         "backend": {
           "title": "Développement Backend",
-          "skills": [
-            {
-              "name": "Node.js",
-              "level": "Expert",
-              "description": "Express.js, API REST"
-            },
-            {
-              "name": "PHP",
-              "level": "Expert",
-              "description": "Laravel, Symfony"
-            },
-            {
-              "name": "Java",
-              "level": "Intermédiaire",
-              "description": "Spring Boot"
-            }
-          ]
+          "nodejs": {
+            "description": "Construction d'applications serveur évolutives avec Express.js et API REST"
+          },
+          "phplaravel": {
+            "description": "Développement d'applications web avec Laravel, MVC et Eloquent ORM"
+          },
+          "apidesign": {
+            "description": "Création et maintenance d'APIs RESTful et GraphQL évolutives"
+          },
+          "microservices": {
+            "description": "Conception et implémentation d'architecture microservices distribuée"
+          }
         },
         "database": {
           "title": "Base de Données & DevOps",
-          "skills": [
-            {
-              "name": "MongoDB",
-              "level": "Expert",
-              "description": "Agrégation, Performance"
-            },
-            {
-              "name": "MySQL/MariaDB",
-              "level": "Expert",
-              "description": "Optimisation, Indexation"
-            },
-            {
-              "name": "PostgreSQL",
-              "level": "Avancé",
-              "description": "Query Optimization"
-            },
-            {
-              "name": "Docker",
-              "level": "Avancé",
-              "description": "Conteneurisation, Compose"
-            }
-          ]
+          "mongodb": {
+            "description": "Conception de bases NoSQL avec pipelines d'agrégation et indexation"
+          },
+          "postgresql": {
+            "description": "Gestion avancée de bases SQL et optimisation des requêtes"
+          },
+          "redis": {
+            "description": "Cache en mémoire, pub/sub et gestion des sessions"
+          },
+          "docker": {
+            "description": "Orchestration de conteneurs, déploiement et intégration CI/CD"
+          }
+        },
+        "testing": {
+          "title": "Tests & QA",
+          "jest": {
+            "description": "Tests unitaires et d'intégration avec mock et couverture de code"
+          },
+          "testinglibrary": {
+            "description": "Tests de composants React avec approche centrée utilisateur"
+          },
+          "cypress": {
+            "description": "Tests end-to-end et automatisation des tests de composants"
+          },
+          "security": {
+            "description": "Tests de sécurité et implémentation des meilleures pratiques OWASP"
+          }
         }
       }
     },
     "projects": {
       "title": "Projets Phares",
-      "subtitle": "Découvrez mes dernières réalisations"
+      "subtitle": "Découvrez mes dernières réalisations",
+      "viewSource": "Voir le code",
+      "visitWebsite": "Visiter le site"
     },
     "experience": {
       "title": "Expérience",
-      "subtitle": "Mon parcours professionnel"
+      "subtitle": "Mon parcours professionnel",
+      "current": "Présent"
     },
     "contact": {
-      "title": "Contact",
-      "subtitle": "Disponible pour des opportunités",
-      "availability": "Ouvert aux opportunités freelance et temps plein"
+      "title": "Contactez-moi",
+      "subtitle": "Je suis toujours intéressé par de nouveaux projets et opportunités",
+      "availability": "Disponible pour des missions freelance et des postes à temps plein"
     }
   },
   "projects": {
     "quebecar": {
-      "title": "Québecar",
-      "subtitle": "E-commerce Automobile",
-      "description": "Plateforme bilingue innovante de vente et d'achat de voitures.",
+      "title": "QuebeCar",
+      "subtitle": "Plateforme de Vente Automobile",
+      "description": "Une plateforme bilingue innovante de vente de voitures créée avec Laravel et React",
       "tech": ["Laravel", "React", "MySQL", "Stripe", "Cloudinary"],
       "features": [
-        "Architecture microservices scalable",
-        "Intégration Stripe sécurisée",
-        "Système de gestion média cloud",
+        "Architecture microservices évolutive",
+        "Intégration sécurisée de Stripe",
+        "Gestion des médias cloud",
         "Interface bilingue (FR/EN)"
       ],
       "metrics": [
@@ -132,7 +129,7 @@
     "solutionnet": {
       "title": "SolutionNet Plus",
       "subtitle": "Solutions Internet & Téléphonie",
-      "description": "Fournisseur de services Internet et téléphonie pour entreprises et particuliers au Québec.",
+      "description": "Fournisseur de services Internet et téléphonie pour les entreprises du Québec",
       "tech": ["Laravel", "Vue.js", "MySQL", "Node.js", "Docker"],
       "features": [
         "Portail client en temps réel",
@@ -141,67 +138,42 @@
         "Support client intégré"
       ],
       "metrics": [
-        "Disponibilité 99.9%",
+        "99.9% de disponibilité",
         "Support 24/7",
         "+5000 clients actifs"
-      ]
+      ],
+      "customDetails": {
+        "role": "Développeur Front-end chez Win Technology",
+        "contributions": [
+          "Développement du carousel JavaScript dynamique",
+          "Implémentation du système de rendez-vous interactif",
+          "Création du système de confirmation par email",
+          "Intégration du support multilingue"
+        ]
+      }
     },
     "edunova": {
       "title": "Edunova",
       "subtitle": "Plateforme E-learning",
-      "description": "Solution moderne d'apprentissage en ligne avec des fonctionnalités avancées.",
+      "description": "Solution moderne d'apprentissage en ligne avec fonctionnalités avancées",
       "tech": ["React", "Node.js", "PostgreSQL", "Docker", "Redis"],
       "features": [
         "Architecture événementielle",
-        "Streaming vidéo optimisé",
-        "Analytics en temps réel",
+        "Optimisation du streaming vidéo",
+        "Analytique en temps réel",
         "Cache distribué"
       ],
       "metrics": [
-        "Support 5k+ utilisateurs simultanés",
+        "Supporte 5k+ utilisateurs",
         "Temps de chargement -40%",
         "Engagement +35%"
-      ]
-    },
-    "pets": {
-      "title": "Pets",
-      "subtitle": "Application de Gestion Animalière",
-      "description": "Plateforme de gestion pour animaux de compagnie avec fonctionnalités avancées.",
-      "tech": ["React", "Node.js", "MongoDB", "Express"],
-      "features": [
-        "Système de gestion d'animaux",
-        "Profils détaillés",
-        "Interface intuitive",
-        "API RESTful"
-      ],
-      "metrics": [
-        "Performance optimisée",
-        "UX améliorée",
-        "Architecture modulaire"
-      ]
-    },
-    "portfolio": {
-      "title": "Portfolio",
-      "subtitle": "Site Web Personnel",
-      "description": "Portfolio professionnel avec design moderne et responsive.",
-      "tech": ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-      "features": [
-        "Design responsive",
-        "Animations fluides",
-        "Multi-langue",
-        "Mode sombre/clair"
-      ],
-      "metrics": [
-        "Performance 95+",
-        "SEO optimisé",
-        "Accessibilité maximale"
       ]
     }
   },
   "experience": {
     "win": {
       "role": "Développeur Full Stack",
-      "company": "Win Technologie",
+      "company": "Win Technology",
       "period": "Août 2024 - Présent",
       "achievements": [
         { "icon": "📊", "text": "Augmentation de l'engagement utilisateur de 25%" },
@@ -210,7 +182,7 @@
       ]
     },
     "artur": {
-      "role": "Développeur Back-End (Stage)",
+      "role": "Développeur Backend (Stage)",
       "company": "Artur.Art",
       "period": "Juillet 2024 - Septembre 2024",
       "achievements": [
@@ -221,11 +193,20 @@
     }
   },
   "contact": {
-    "email": { "name": "Email" },
-    "linkedin": { "name": "LinkedIn" },
-    "github": { "name": "GitHub" },
+    "email": {
+      "name": "Email",
+      "value": "tiagobarroscavalcanti@gmail.com"
+    },
+    "linkedin": {
+      "name": "LinkedIn",
+      "value": "linkedin.com/in/tiago-barros-cav"
+    },
+    "github": {
+      "name": "GitHub",
+      "value": "github.com/tiagolp22"
+    },
     "sendEmail": "Envoyer un email",
-    "downloadCV": "Télécharger le CV"
+    "downloadCV": "Télécharger CV"
   },
   "footer": {
     "copyright": "© {year} Tiago Barros. Tous droits réservés."

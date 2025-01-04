@@ -94,7 +94,7 @@ export const Contact = () => {
               </Button>
               <Button 
                 variant="outline"
-                onClick={() => window.open('/cv-tiago-barros.pdf')}
+                onClick={() => window.open('/documents/cv-tiago-barros.pdf')}
                 className="border-[rgb(var(--highlight))] text-[rgb(var(--highlight))] hover:bg-[rgb(var(--highlight))] hover:text-white"
               >
                 {t('contact.downloadCV')}
