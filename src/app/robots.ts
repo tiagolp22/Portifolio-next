@@ -1,11 +1,13 @@
-export default function robots() {
+import { MetadataRoute } from 'next'
+
+export const dynamic = 'force-static'
+
+export default function robots(): MetadataRoute.Robots {
   return {
-    rules: [
-      {
-        userAgent: '*',
-        allow: '/',
-      },
-    ],
+    rules: {
+      userAgent: '*',
+      allow: '/',
+    },
     sitemap: 'https://tiagodev.ca/sitemap.xml',
   }
 }
