@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root[data-theme="light"] {
   --background: 250, 251, 252;
   --foreground: 23, 23, 23;
@@ -15,7 +14,6 @@
   --secondary: 71, 85, 105;
   --accent: 79, 70, 229;
 }
-
 
 :root[data-theme="dark"] {
   --background: 17, 24, 39;
@@ -30,12 +28,10 @@
   --accent: 129, 140, 248;
 }
 
-
 :root {
   --transition-duration: 400ms;
   --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 
 :root[data-theme] {
   animation: theme-fade 400ms var(--transition-timing);
@@ -52,7 +48,6 @@
   }
 }
 
-
 * {
   transition: 
     background-color var(--transition-duration) var(--transition-timing),
@@ -63,13 +58,16 @@
     opacity var(--transition-duration) var(--transition-timing),
     box-shadow var(--transition-duration) var(--transition-timing),
     transform var(--transition-duration) var(--transition-timing);
+  -webkit-tap-highlight-color: transparent;
 }
-
 
 body {
   color: rgb(var(--foreground));
   background: rgb(var(--background));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
 
 .card {
   background: rgb(var(--card-background));
@@ -89,9 +87,13 @@ body {
   .container {
     @apply max-w-7xl mx-auto px-4;
   }
+}
 
-  .hover-effect {
-    @apply hover:scale-[1.02] hover:shadow-lg active:scale-[0.98] transition-all duration-300;
+@supports (-webkit-touch-callout: none) {
+  .card {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
   }
 }
 

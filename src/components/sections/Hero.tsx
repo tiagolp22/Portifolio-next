@@ -7,6 +7,17 @@ import { useI18n } from '@/contexts/I18nContext'
 export const Hero = () => {
   const { t } = useI18n()
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id)
+    if (element) {
+      const offsetTop = element.offsetTop
+      window.scrollTo({
+        top: offsetTop - 100,
+        behavior: 'smooth'
+      })
+    }
+  }
+
   return (
     <section className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-blue-500/10 to-transparent" />
@@ -29,14 +40,12 @@ export const Hero = () => {
           {t('hero.subtitle')}
         </p>
         <div className="flex flex-wrap justify-center gap-4">
-          <Button
-            onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-          >
+          <Button onClick={() => scrollToSection('projets')}>
             {t('hero.cta.projects')}
           </Button>
           <Button
             variant="outline"
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => scrollToSection('contact')}
           >
             {t('hero.cta.contact')}
           </Button>

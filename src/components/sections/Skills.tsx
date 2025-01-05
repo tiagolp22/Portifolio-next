@@ -20,20 +20,7 @@ export const Skills = () => {
   }, [mounted]);
 
   if (!mounted) {
-    return (
-      <section id="competences" className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4 text-[rgb(var(--foreground))]">
-              {t('sections.skills.title')}
-            </h2>
-            <p className="text-[rgb(var(--muted))]">
-              {t('sections.skills.subtitle')}
-            </p>
-          </div>
-        </div>
-      </section>
-    );
+    return null;
   }
 
   return (
@@ -50,26 +37,28 @@ export const Skills = () => {
 
         {/* Navigation Tabs */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {skillCategories.map((category) => {
-            const Icon = category.icon;
-            return (
-              <button
-                key={category.id}
-                onClick={() => setActiveCategory(category.id)}
-                className={`
-                  flex items-center gap-3 px-6 py-3 rounded-lg
-                  transition-all duration-200 ease-in-out
-                  ${activeCategory === category.id 
-                    ? 'bg-[rgb(var(--highlight))] text-white shadow-lg scale-[1.02]'
-                    : 'bg-[rgb(var(--card-background))] text-[rgb(var(--foreground))] hover:bg-[rgb(var(--button-hover))] border border-[rgb(var(--card-border))]'
-                  }
-                `}
-              >
-                <Icon className={`w-5 h-5 ${activeCategory === category.id ? 'text-white' : 'text-[rgb(var(--highlight))]'}`} />
-                <span className="whitespace-nowrap">{t(`sections.skills.${category.id}`)}</span>
-              </button>
-            );
-          })}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-4xl mx-auto">
+            {skillCategories.map((category) => {
+              const Icon = category.icon;
+              return (
+                <button
+                  key={category.id}
+                  onClick={() => setActiveCategory(category.id)}
+                  className={`
+                    flex items-center justify-center gap-3 px-6 py-3 rounded-lg w-full
+                    transition-all duration-200 ease-in-out min-w-[200px]
+                    ${activeCategory === category.id 
+                      ? 'bg-[rgb(var(--highlight))] text-white shadow-lg scale-[1.02]'
+                      : 'bg-[rgb(var(--card-background))] text-[rgb(var(--foreground))] hover:bg-[rgb(var(--button-hover))] border border-[rgb(var(--card-border))]'
+                    }
+                  `}
+                >
+                  <Icon className={`w-5 h-5 ${activeCategory === category.id ? 'text-white' : 'text-[rgb(var(--highlight))]'}`} />
+                  <span className="whitespace-nowrap">{t(`sections.skills.${category.id}`)}</span>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {/* Skills Grid */}

@@ -31,10 +31,10 @@ export const LANGUAGES = {
   },
 } as const;
 
-export type TranslationValue = string | { [key: string]: TranslationValue } | TranslationValue[];
+type TranslationValue = string | Record<string, unknown> | unknown[];
 
 type DeepRecord = {
-  [key: string]: TranslationValue;
+  [key: string]: TranslationValue | DeepRecord;
 };
 
 const translations: Record<Locale, DeepRecord> = {
@@ -44,31 +44,72 @@ const translations: Record<Locale, DeepRecord> = {
   es: esTranslations,
 };
 
+const detectBrowserLanguage = (): Locale => {
+  if (typeof window === 'undefined') return 'en';
+
+  const browserLangs = navigator.languages || [navigator.language];
+  
+  const langMap: Record<string, Locale> = {
+    'pt-BR': 'pt',
+    'pt-PT': 'pt',
+    'pt': 'pt',
+    'en-US': 'en',
+    'en-GB': 'en',
+    'en': 'en',
+    'fr-FR': 'fr',
+    'fr': 'fr',
+    'es-ES': 'es',
+    'es': 'es'
+  };
+
+  for (const lang of browserLangs) {
+    const shortLang = lang.split('-')[0].toLowerCase();
+    if (langMap[lang]) return langMap[lang];
+    if (langMap[shortLang]) return langMap[shortLang];
+  }
+
+  return 'en';
+};
+
 interface I18nContextType {
   locale: Locale;
   setLocale: (locale: Locale) => void;
-  t: <T = string>(key: string, params?: { returnObjects?: boolean } & Record<string, unknown>) => T;
+  t: <T = string>(
+    key: string,
+    params?: { returnObjects?: boolean } & Record<string, unknown>
+  ) => T;
 }
 
 const I18nContext = createContext<I18nContextType | undefined>(undefined);
 
-function getNestedValue(obj: DeepRecord, path: string): TranslationValue {
-  return path.split('.').reduce((current: TranslationValue, key: string) => {
-    if (current === undefined || typeof current !== 'object' || current === null) {
-      return undefined as unknown as TranslationValue;
+function getNestedValue(obj: DeepRecord, path: string): TranslationValue | undefined {
+  return path.split('.').reduce((current: unknown, key: string) => {
+    if (
+      current === undefined ||
+      current === null ||
+      typeof current !== 'object'
+    ) {
+      return undefined;
     }
-    return (current as Record<string, TranslationValue>)[key];
+    return (current as DeepRecord)[key];
   }, obj);
 }
 
 export function I18nProvider({ children }: { children: React.ReactNode }) {
-  const [locale, setLocale] = useState<Locale>('fr');
+  const [locale, setLocale] = useState<Locale>('en');
+  const [isInitialized, setIsInitialized] = useState(false);
 
   useEffect(() => {
     const savedLocale = localStorage.getItem('locale') as Locale;
+    
     if (savedLocale && Object.keys(translations).includes(savedLocale)) {
       handleSetLocale(savedLocale);
+    } else {
+      const browserLocale = detectBrowserLanguage();
+      handleSetLocale(browserLocale);
     }
+    
+    setIsInitialized(true);
   }, []);
 
   const handleSetLocale = (newLocale: Locale) => {
@@ -77,7 +118,10 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
     document.documentElement.lang = newLocale;
   };
 
-  const t = <T = string>(key: string, params?: { returnObjects?: boolean } & Record<string, unknown>): T => {
+  const t = <T = string>(
+    key: string,
+    params?: { returnObjects?: boolean } & Record<string, unknown>
+  ): T => {
     const value = getNestedValue(translations[locale], key);
 
     if (value === undefined) {
@@ -91,7 +135,7 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
 
     if (typeof value === 'string') {
       const result = params 
-        ? value.replace(/{(\w+)}/g, (_, k) => String(params[k] || ''))
+        ? value.replace(/{(\w+)}/g, (_, k) => String(params[k] ?? ''))
         : value;
       return result as T;
     }
@@ -99,14 +143,12 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
     return value as T;
   };
 
-  const contextValue: I18nContextType = {
-    locale,
-    setLocale: handleSetLocale,
-    t,
-  };
+  if (!isInitialized) {
+    return null;
+  }
 
   return (
-    <I18nContext.Provider value={contextValue}>
+    <I18nContext.Provider value={{ locale, setLocale: handleSetLocale, t }}>
       {children}
     </I18nContext.Provider>
   );
