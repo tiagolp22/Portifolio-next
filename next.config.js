@@ -3,8 +3,8 @@ const nextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
-    domains: ['tiagodev.ca'],
-  },
+    domains: ['tiagodev.ca']
+  }
 };
 
 if (process.env.NODE_ENV === 'development') {
