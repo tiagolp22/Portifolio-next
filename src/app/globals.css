@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Tema claro - Cores inspiradas em interfaces modernas */
+
 :root[data-theme="light"] {
   --background: 250, 251, 252;
   --foreground: 23, 23, 23;
@@ -16,7 +16,7 @@
   --accent: 79, 70, 229;
 }
 
-/* Tema escuro - Ajustado para melhor contraste */
+
 :root[data-theme="dark"] {
   --background: 17, 24, 39;
   --foreground: 248, 250, 252;
@@ -30,13 +30,13 @@
   --accent: 129, 140, 248;
 }
 
-/* Transições suaves e animadas */
+
 :root {
   --transition-duration: 400ms;
   --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Animação para a transição de tema */
+
 :root[data-theme] {
   animation: theme-fade 400ms var(--transition-timing);
 }
@@ -52,7 +52,7 @@
   }
 }
 
-/* Transições globais melhoradas */
+
 * {
   transition: 
     background-color var(--transition-duration) var(--transition-timing),
@@ -65,7 +65,7 @@
     transform var(--transition-duration) var(--transition-timing);
 }
 
-/* Estilos base */
+
 body {
   color: rgb(var(--foreground));
   background: rgb(var(--background));
@@ -85,7 +85,6 @@ body {
   @apply bg-gradient-to-r from-[rgb(var(--highlight))] to-[rgb(var(--accent))] bg-clip-text text-transparent;
 }
 
-/* Componentes */
 @layer components {
   .container {
     @apply max-w-7xl mx-auto px-4;
@@ -96,7 +95,6 @@ body {
   }
 }
 
-/* Seleção de texto */
 ::selection {
   background-color: rgb(var(--highlight));
   color: rgb(255, 255, 255);

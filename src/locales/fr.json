@@ -128,27 +128,29 @@
     },
     "solutionnet": {
       "title": "SolutionNet Plus",
-      "subtitle": "Solutions Internet & Téléphonie",
-      "description": "Fournisseur de services Internet et téléphonie pour les entreprises du Québec",
-      "tech": ["Laravel", "Vue.js", "MySQL", "Node.js", "Docker"],
+      "subtitle": "Système de Rendez-vous HVAC",
+      "description": "Développement d'un système web complet avec prise de rendez-vous en ligne, réservation en plusieurs étapes, newsletter et gestion des services HVAC",
+      "tech": ["HTML5/CSS3", "JavaScript", "Node.js", "MongoDB", "Express.js"],
       "features": [
-        "Portail client en temps réel",
-        "Système de facturation automatisé",
-        "Interface de gestion des services",
-        "Support client intégré"
+        "Système de rendez-vous en ligne",
+        "Réservation en plusieurs étapes",
+        "Inscription à la newsletter",
+        "Formulaire de contact",
+        "Interface responsive",
+        "Support multilingue (FR/EN)"
       ],
       "metrics": [
-        "99.9% de disponibilité",
-        "Support 24/7",
-        "+5000 clients actifs"
+        "Interface bilingue FR/EN",
+        "Design responsive",
+        "Système de réservation intuitif"
       ],
       "customDetails": {
         "role": "Développeur Front-end chez Win Technology",
         "contributions": [
-          "Développement du carousel JavaScript dynamique",
-          "Implémentation du système de rendez-vous interactif",
-          "Création du système de confirmation par email",
-          "Intégration du support multilingue"
+          "Implémentation du système de rendez-vous",
+          "Développement de formulaires multi-étapes",
+          "Intégration de la newsletter",
+          "Système d'internationalisation"
         ]
       }
     },
@@ -176,7 +178,10 @@
       "company": "Win Technology",
       "period": "Août 2024 - Présent",
       "achievements": [
-        { "icon": "📊", "text": "Augmentation de l'engagement utilisateur de 25%" },
+        {
+          "icon": "📊",
+          "text": "Augmentation de l'engagement utilisateur de 25%"
+        },
         { "icon": "⚡", "text": "Réduction du temps de réponse API de 30%" },
         { "icon": "💻", "text": "Optimisation des requêtes MongoDB de 40%" }
       ]

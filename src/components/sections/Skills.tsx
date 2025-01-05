@@ -9,12 +9,10 @@ export const Skills = () => {
   const [mounted, setMounted] = useState(false);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
-  // Primeiro mount
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  // Definir categoria inicial após montagem
   useEffect(() => {
     if (mounted) {
       setActiveCategory('frontend');
@@ -51,7 +49,7 @@ export const Skills = () => {
         </div>
 
         {/* Navigation Tabs */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-12 px-2">
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
           {skillCategories.map((category) => {
             const Icon = category.icon;
             return (
@@ -59,17 +57,16 @@ export const Skills = () => {
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
                 className={`
-                  flex items-center justify-center sm:justify-start
-                  px-4 py-3 rounded-lg
-                  transition-colors duration-200 ease-in-out
+                  flex items-center gap-3 px-6 py-3 rounded-lg
+                  transition-all duration-200 ease-in-out
                   ${activeCategory === category.id 
-                    ? 'bg-[rgb(var(--highlight))] text-white'
-                    : 'bg-[rgb(var(--card-background))] hover:bg-[rgb(var(--button-hover))]'
+                    ? 'bg-[rgb(var(--highlight))] text-white shadow-lg scale-[1.02]'
+                    : 'bg-[rgb(var(--card-background))] text-[rgb(var(--foreground))] hover:bg-[rgb(var(--button-hover))] border border-[rgb(var(--card-border))]'
                   }
                 `}
               >
-                <Icon className="w-5 h-5 mr-2" />
-                <span>{t(`sections.skills.${category.id}`)}</span>
+                <Icon className={`w-5 h-5 ${activeCategory === category.id ? 'text-white' : 'text-[rgb(var(--highlight))]'}`} />
+                <span className="whitespace-nowrap">{t(`sections.skills.${category.id}`)}</span>
               </button>
             );
           })}
@@ -98,8 +95,8 @@ export const Skills = () => {
                       className="group relative"
                     >
                       <div className="bg-[rgb(var(--card-background))] rounded-xl p-4 border border-[rgb(var(--card-border))] h-full">
-                        <div className={`bg-gradient-to-br ${skill.gradient.from} ${skill.gradient.to} w-16 h-16 rounded-lg p-3 mb-4 mx-auto flex items-center justify-center`}>
-                          <skill.icon className="w-10 h-10 text-white" />
+                        <div className="bg-[rgb(var(--card-background))] rounded-lg p-3 mb-4 mx-auto flex items-center justify-center">
+                          <skill.icon className="w-10 h-10 text-[rgb(var(--highlight))]" />
                         </div>
 
                         <h3 className="text-lg font-bold text-center mb-2">
@@ -121,7 +118,7 @@ export const Skills = () => {
                           ))}
                         </div>
 
-                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-br from-[rgb(var(--highlight))] to-[rgb(var(--accent))] rounded-xl transition-opacity duration-200 p-4 flex items-center justify-center">
+                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-[rgb(var(--highlight))] rounded-xl transition-opacity duration-200 p-4 flex items-center justify-center">
                           <p className="text-white text-center text-sm">
                             {t(getSkillTranslationKey(activeCategory, skill.name))}
                           </p>

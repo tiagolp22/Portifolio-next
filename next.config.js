@@ -1,17 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   images: {
-    domains: ['your-domain.com', 'localhost'],
-    unoptimized: process.env.NODE_ENV === 'development',
-    formats: ['image/webp'],
-    remotePatterns: [
-      {
-        protocol: 'http',
-        hostname: 'localhost',
-        port: '3000',
-        pathname: '/images/**',
-      },
-    ],
+    unoptimized: true,
+    domains: ['tiagodev.ca'],
   },
   async headers() {
     return [
@@ -21,21 +13,21 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=31536000, must-revalidate'
-          }
-        ]
+            value: 'public, max-age=31536000, must-revalidate',
+          },
+        ],
       },
       {
         source: '/:path*',
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=3600, must-revalidate'
-          }
-        ]
-      }
-    ]
-  }
-}
+            value: 'public, max-age=3600, must-revalidate',
+          },
+        ],
+      },
+    ];
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

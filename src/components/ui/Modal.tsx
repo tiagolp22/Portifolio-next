@@ -1,4 +1,3 @@
-// Modal.tsx
 'use client'
 import { X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'

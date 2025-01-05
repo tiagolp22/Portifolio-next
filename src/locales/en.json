@@ -128,27 +128,29 @@
     },
     "solutionnet": {
       "title": "SolutionNet Plus",
-      "subtitle": "Internet & Telephony Solutions",
-      "description": "Internet and telephony service provider for Quebec businesses",
-      "tech": ["Laravel", "Vue.js", "MySQL", "Node.js", "Docker"],
+      "subtitle": "HVAC Scheduling System",
+      "description": "Development of a complete web system with online scheduling, multi-step appointment booking, newsletter and HVAC service management",
+      "tech": ["HTML5/CSS3", "JavaScript", "Node.js", "MongoDB", "Express.js"],
       "features": [
-        "Real-time customer portal",
-        "Automated billing system",
-        "Service management interface",
-        "Integrated customer support"
+        "Online appointment scheduling",
+        "Multi-step booking system",
+        "Newsletter subscription",
+        "Contact form",
+        "Responsive interface",
+        "Multilingual support (FR/EN)"
       ],
       "metrics": [
-        "99.9% uptime",
-        "24/7 support",
-        "+5000 active customers"
+        "Bilingual interface FR/EN",
+        "Responsive design",
+        "Intuitive booking system"
       ],
       "customDetails": {
         "role": "Front-end Developer at Win Technology",
         "contributions": [
-          "Developed dynamic JavaScript carousel",
-          "Implemented interactive appointment booking system",
-          "Created email confirmation system",
-          "Integrated multilingual support"
+          "Implementation of scheduling system",
+          "Development of multi-step forms",
+          "Newsletter integration",
+          "Internationalization system"
         ]
       }
     },
@@ -163,11 +165,7 @@
         "Real-time analytics",
         "Distributed caching"
       ],
-      "metrics": [
-        "Supports 5k+ users",
-        "Loading time -40%",
-        "Engagement +35%"
-      ]
+      "metrics": ["Supports 5k+ users", "Loading time -40%", "Engagement +35%"]
     }
   },
   "experience": {

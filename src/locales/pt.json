@@ -128,27 +128,29 @@
     },
     "solutionnet": {
       "title": "SolutionNet Plus",
-      "subtitle": "Soluções de Internet e Telefonia",
-      "description": "Provedor de serviços de Internet e telefonia para empresas em Quebec",
-      "tech": ["Laravel", "Vue.js", "MySQL", "Node.js", "Docker"],
+      "subtitle": "Sistema de Agendamento HVAC",
+      "description": "Desenvolvimento de um sistema web completo com agendamento online, marcação de consultas em múltiplas etapas, newsletter e gestão de serviços HVAC",
+      "tech": ["HTML5/CSS3", "JavaScript", "Node.js", "MongoDB", "Express.js"],
       "features": [
-        "Portal do cliente em tempo real",
-        "Sistema de faturamento automatizado",
-        "Interface de gestão de serviços",
-        "Suporte ao cliente integrado"
+        "Sistema de agendamento online",
+        "Marcação de consultas multi-etapas",
+        "Inscrição em newsletter",
+        "Formulário de contato",
+        "Interface responsiva",
+        "Suporte multilíngue (FR/EN)"
       ],
       "metrics": [
-        "99.9% de disponibilidade",
-        "Suporte 24/7",
-        "+5000 clientes ativos"
+        "Interface bilíngue FR/EN",
+        "Design responsivo",
+        "Sistema intuitivo de agendamento"
       ],
       "customDetails": {
         "role": "Desenvolvedor Front-end na Win Technology",
         "contributions": [
-          "Desenvolvimento do carrossel JavaScript dinâmico",
-          "Implementação do sistema de agendamento interativo",
-          "Criação do sistema de confirmação por email",
-          "Integração do suporte multilíngue"
+          "Implementação do sistema de agendamento",
+          "Desenvolvimento de formulários multi-etapas",
+          "Integração de newsletter",
+          "Sistema de internacionalização"
         ]
       }
     },

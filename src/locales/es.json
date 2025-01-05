@@ -128,27 +128,29 @@
     },
     "solutionnet": {
       "title": "SolutionNet Plus",
-      "subtitle": "Soluciones de Internet y Telefonía",
-      "description": "Proveedor de servicios de Internet y telefonía para empresas en Quebec",
-      "tech": ["Laravel", "Vue.js", "MySQL", "Node.js", "Docker"],
+      "subtitle": "Sistema de Programación HVAC",
+      "description": "Desarrollo de un sistema web completo con programación en línea, reserva de citas en múltiples pasos, boletín informativo y gestión de servicios HVAC",
+      "tech": ["HTML5/CSS3", "JavaScript", "Node.js", "MongoDB", "Express.js"],
       "features": [
-        "Portal de cliente en tiempo real",
-        "Sistema de facturación automatizado",
-        "Interfaz de gestión de servicios",
-        "Soporte al cliente integrado"
+        "Sistema de citas en línea",
+        "Reserva en múltiples pasos",
+        "Suscripción a boletín",
+        "Formulario de contacto",
+        "Interfaz responsiva",
+        "Soporte multilingüe (FR/EN)"
       ],
       "metrics": [
-        "99.9% de disponibilidad",
-        "Soporte 24/7",
-        "+5000 clientes activos"
+        "Interfaz bilingüe FR/EN",
+        "Diseño responsivo",
+        "Sistema intuitivo de reservas"
       ],
       "customDetails": {
         "role": "Desarrollador Front-end en Win Technology",
         "contributions": [
-          "Desarrollo del carrusel JavaScript dinámico",
-          "Implementación del sistema de citas interactivo",
-          "Creación del sistema de confirmación por email",
-          "Integración del soporte multilingüe"
+          "Implementación del sistema de citas",
+          "Desarrollo de formularios multi-paso",
+          "Integración de boletín informativo",
+          "Sistema de internacionalización"
         ]
       }
     },
@@ -176,8 +178,14 @@
       "company": "Win Technology",
       "period": "Agosto 2024 - Presente",
       "achievements": [
-        { "icon": "📊", "text": "Aumento del compromiso del usuario en un 25%" },
-        { "icon": "⚡", "text": "Reducción del tiempo de respuesta de API en un 30%" },
+        {
+          "icon": "📊",
+          "text": "Aumento del compromiso del usuario en un 25%"
+        },
+        {
+          "icon": "⚡",
+          "text": "Reducción del tiempo de respuesta de API en un 30%"
+        },
         { "icon": "💻", "text": "Optimización de consultas MongoDB en un 40%" }
       ]
     },
