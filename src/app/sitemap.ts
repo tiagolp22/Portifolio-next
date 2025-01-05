@@ -1,9 +1,5 @@
-import { MetadataRoute } from 'next'
-
-export const dynamic = 'force-static'
-
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://tiagobarros.dev'
+export default function sitemap() {
+  const baseUrl = 'https://tiagodev.ca'
   
   return [
     {
