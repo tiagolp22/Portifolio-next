@@ -5,7 +5,10 @@ const nextConfig = {
     unoptimized: true,
     domains: ['tiagodev.ca'],
   },
-  async headers() {
+};
+
+if (process.env.NODE_ENV === 'development') {
+  nextConfig.async = function headers() {
     return [
       {
         source: '/:all*(svg|jpg|png)',
@@ -27,7 +30,7 @@ const nextConfig = {
         ],
       },
     ];
-  },
-};
+  };
+}
 
 module.exports = nextConfig;

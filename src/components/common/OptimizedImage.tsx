@@ -1,5 +1,6 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import Image from 'next/image'
 import { cn } from '@/utils/cn'
 
 interface OptimizedImageProps {
@@ -14,20 +15,10 @@ export const OptimizedImage = ({
   src,
   alt,
   className,
-  width,
-  height
+  width = 400,
+  height = 300
 }: OptimizedImageProps) => {
   const [isLoading, setIsLoading] = useState(true)
-  const [imgSrc, setImgSrc] = useState<string>('')
-
-  useEffect(() => {
-    const img = new Image()
-    img.src = src
-    img.onload = () => {
-      setImgSrc(src)
-      setIsLoading(false)
-    }
-  }, [src])
 
   return (
     <div 
@@ -40,19 +31,18 @@ export const OptimizedImage = ({
       {isLoading && (
         <div className="absolute inset-0 animate-pulse bg-[rgb(var(--card-border))]" />
       )}
-      {imgSrc && (
-        <img
-          src={imgSrc}
-          alt={alt}
-          className={cn(
-            'transition-opacity duration-300',
-            isLoading ? 'opacity-0' : 'opacity-100'
-          )}
-          width={width}
-          height={height}
-          loading="lazy"
-        />
-      )}
+      <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        className={cn(
+          'transition-opacity duration-300',
+          isLoading ? 'opacity-0' : 'opacity-100'
+        )}
+        onLoadingComplete={() => setIsLoading(false)}
+        loading="lazy"
+      />
     </div>
   )
 }
