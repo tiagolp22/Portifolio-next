@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useRef } from 'react';
 
 interface UseClickOutsideProps {
@@ -9,28 +11,39 @@ export const useClickOutside = ({ onClickOutside, onScroll }: UseClickOutsidePro
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    let timeoutId: NodeJS.Timeout;
+
     const handleClick = (event: MouseEvent) => {
       if (ref.current && !ref.current.contains(event.target as Node)) {
-        onClickOutside();
+        timeoutId = setTimeout(() => {
+          onClickOutside();
+        }, 0);
       }
     };
 
     const handleScroll = () => {
       if (onScroll) {
-        onScroll();
+        timeoutId = setTimeout(() => {
+          onScroll();
+        }, 0);
       }
     };
 
-    document.addEventListener('mousedown', handleClick);
-    if (onScroll) {
-      window.addEventListener('scroll', handleScroll, { passive: true });
-    }
+    requestAnimationFrame(() => {
+      document.addEventListener('mousedown', handleClick);
+      if (onScroll) {
+        window.addEventListener('scroll', handleScroll, { passive: true });
+      }
+    });
 
     return () => {
       document.removeEventListener('mousedown', handleClick);
       if (onScroll) {
         window.removeEventListener('scroll', handleScroll);
       }
+      clearTimeout(timeoutId);
     };
   }, [onClickOutside, onScroll]);
 

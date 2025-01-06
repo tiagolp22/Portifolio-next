@@ -1,4 +1,6 @@
 'use client'
+
+import { useEffect } from 'react'
 import { X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useClickOutside } from '@/hooks/useClickOutside'
@@ -14,6 +16,17 @@ export const Modal = ({ isOpen, onClose, children }: ModalProps) => {
     onClickOutside: onClose,
     onScroll: onClose
   })
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
 
   return (
     <AnimatePresence>
@@ -31,6 +44,7 @@ export const Modal = ({ isOpen, onClose, children }: ModalProps) => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 100, scale: 0.95 }}
               className="relative w-full max-w-4xl mx-auto bg-[rgb(var(--card-background))] rounded-lg shadow-xl"
+              onClick={(e) => e.stopPropagation()}
             >
               <div className="sticky top-0 flex justify-end p-4 bg-[rgb(var(--card-background))] rounded-t-lg border-b border-[rgb(var(--card-border))]">
                 <button

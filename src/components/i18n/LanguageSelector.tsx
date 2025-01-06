@@ -1,5 +1,6 @@
 'use client'
-import { useState } from 'react'
+
+import { useState, useEffect } from 'react'
 import { useI18n, LANGUAGES, type Locale } from '@/contexts/I18nContext'
 import { ChevronDown } from 'lucide-react'
 import { useClickOutside } from '@/hooks/useClickOutside'
@@ -7,8 +8,17 @@ import { useClickOutside } from '@/hooks/useClickOutside'
 export const LanguageSelector = () => {
   const { locale, setLocale } = useI18n()
   const [isOpen, setIsOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
-  const handleClose = () => setIsOpen(false)
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const handleClose = () => {
+    if (mounted) {
+      setIsOpen(false);
+    }
+  }
 
   const ref = useClickOutside({
     onClickOutside: handleClose,
@@ -18,7 +28,10 @@ export const LanguageSelector = () => {
   return (
     <div className="relative" ref={ref}>
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={(e) => {
+          e.stopPropagation();
+          setIsOpen(!isOpen);
+        }}
         className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-[rgb(var(--button-hover))] transition-colors"
         aria-expanded={isOpen}
         aria-haspopup="listbox"
@@ -34,20 +47,21 @@ export const LanguageSelector = () => {
         />
       </button>
 
-      {isOpen && (
+      {mounted && isOpen && (
         <div
           className="absolute right-0 mt-2 py-2 w-48 bg-[rgb(var(--card-background))] 
                      border border-[rgb(var(--card-border))] rounded-lg shadow-lg"
           role="listbox"
           aria-label="Choose language"
+          onClick={(e) => e.stopPropagation()}
         >
           {(Object.entries(LANGUAGES) as [Locale, typeof LANGUAGES.fr][]).map(
             ([code, language]) => (
               <button
                 key={code}
                 onClick={() => {
-                  setLocale(code)
-                  setIsOpen(false)
+                  setLocale(code);
+                  setIsOpen(false);
                 }}
                 className={`w-full px-4 py-2 text-left flex items-center gap-3 
                            hover:bg-[rgb(var(--button-hover))] transition-colors
