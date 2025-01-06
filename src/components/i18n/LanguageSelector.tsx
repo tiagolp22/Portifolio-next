@@ -2,13 +2,21 @@
 import { useState } from 'react'
 import { useI18n, LANGUAGES, type Locale } from '@/contexts/I18nContext'
 import { ChevronDown } from 'lucide-react'
+import { useClickOutside } from '@/hooks/useClickOutside'
 
 export const LanguageSelector = () => {
   const { locale, setLocale } = useI18n()
   const [isOpen, setIsOpen] = useState(false)
 
+  const handleClose = () => setIsOpen(false)
+
+  const ref = useClickOutside({
+    onClickOutside: handleClose,
+    onScroll: handleClose
+  })
+
   return (
-    <div className="relative">
+    <div className="relative" ref={ref}>
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-[rgb(var(--button-hover))] transition-colors"
