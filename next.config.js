@@ -8,7 +8,7 @@ const nextConfig = {
 };
 
 if (process.env.NODE_ENV === 'development') {
-  nextConfig.async = function headers() {
+  nextConfig.headers = async function() {
     return [
       {
         source: '/:all*(svg|jpg|png)',
