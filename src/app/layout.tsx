@@ -25,6 +25,11 @@ export async function generateMetadata({ params }: { params: { locale?: string }
         : 'Portfolio of Tiago Barros - Full Stack Developer specialized in React, Node.js and TypeScript',
     keywords: ['developer', 'full stack', 'react', 'node.js', 'typescript'],
     authors: [{ name: 'Tiago Barros' }],
+    icons: {
+      icon: '/TiagoDEV.png',
+      shortcut: '/TiagoDEV.png',
+      apple: '/TiagoDEV.png',
+    },
     openGraph: {
       title: 'Tiago Barros | Portfolio',
       description:
@@ -35,6 +40,14 @@ export async function generateMetadata({ params }: { params: { locale?: string }
       siteName: 'Tiago Barros Portfolio',
       locale: locale,
       type: 'website',
+      images: [
+        {
+          url: '/TiagoDEV.png',
+          width: 800,
+          height: 600,
+          alt: 'Tiago Barros Logo',
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
@@ -43,6 +56,7 @@ export async function generateMetadata({ params }: { params: { locale?: string }
         locale === 'fr'
           ? 'Portfolio de Tiago Barros - Développeur Full Stack'
           : 'Tiago Barros Portfolio - Full Stack Developer',
+      images: ['/TiagoDEV.png'],
     },
     alternates: {
       canonical: 'https://tiagobarros.dev',

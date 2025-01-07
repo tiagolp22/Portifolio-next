@@ -27,7 +27,7 @@ export const Header = () => {
             href="/" 
             className="text-2xl font-bold text-[rgb(var(--highlight))] hover:opacity-80 transition-opacity"
           >
-            TB
+            Tiago Barros Cavalcanti
           </Link>
 
           {/* Desktop Menu */}
