@@ -29,12 +29,12 @@
 }
 
 :root {
-  --transition-duration: 400ms;
+  --transition-duration: 30ms;
   --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 :root[data-theme] {
-  animation: theme-fade 400ms var(--transition-timing);
+  /* animation: theme-fade 400ms var(--transition-timing); */
 }
 
 @keyframes theme-fade {

@@ -25,11 +25,12 @@ export async function generateMetadata({ params }: { params: { locale?: string }
         : 'Portfolio of Tiago Barros - Full Stack Developer specialized in React, Node.js and TypeScript',
     keywords: ['developer', 'full stack', 'react', 'node.js', 'typescript'],
     authors: [{ name: 'Tiago Barros' }],
-    icons: {
-      icon: '/TiagoDEV.png',
-      shortcut: '/TiagoDEV.png',
-      apple: '/TiagoDEV.png',
-    },
+    icons: [
+      { rel: 'icon', url: '/TiagoDEV.png' },
+      { rel: 'apple-touch-icon', url: '/TiagoDEV.png' },
+      { rel: 'shortcut icon', url: '/TiagoDEV.png' }
+    ],
+    manifest: '/site.webmanifest',
     openGraph: {
       title: 'Tiago Barros | Portfolio',
       description:
@@ -78,6 +79,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        {/* Favicon links */}
+        <link rel="icon" type="image/png" href="/TiagoDEV.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/TiagoDEV.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/TiagoDEV.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/TiagoDEV.png" />
+        <link rel="manifest" href="/site.webmanifest" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

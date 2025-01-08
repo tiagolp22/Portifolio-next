@@ -1,14 +1,31 @@
 'use client'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 import { ThemeToggle } from '@/components/ui/ThemeToggle'
 import { LanguageSelector } from '@/components/i18n/LanguageSelector'
 import { useI18n } from '@/contexts/I18nContext'
+import { useClickOutside } from '@/hooks/useClickOutside'
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const { t } = useI18n()
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  const handleClose = () => {
+    if (mounted) {
+      setIsMenuOpen(false)
+    }
+  }
+
+  const ref = useClickOutside({
+    onClickOutside: handleClose,
+    onScroll: handleClose
+  })
 
   const menuItems = [
     { href: '#competences', label: t('nav.skills') },
@@ -61,8 +78,8 @@ export const Header = () => {
         </nav>
 
         {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden py-4">
+        {mounted && isMenuOpen && (
+          <div className="md:hidden py-4" ref={ref}>
             <nav className="flex flex-col gap-4">
               {menuItems.map(item => (
                 <Link

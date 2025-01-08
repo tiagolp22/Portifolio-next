@@ -1,34 +1,13 @@
 import { Button } from '@/components/ui/Button'
 import { Github, ExternalLink, Layout, Shield, Database, TestTube } from 'lucide-react'
 import { motion } from 'framer-motion'
+import type { Project } from '@/types/project'
 
 interface ProjectDetailsProps {
-  project: {
+  project: Project & {
     title: string
     subtitle: string
     description: string
-    image: string
-    type: 'github' | 'demo'
-    architecture?: {
-      frontend: string[]
-      backend: string[]
-      database: string[]
-      devops?: string[]
-    }
-    features: string[]
-    testing?: {
-      types: string[]
-      tools: string[]
-      methodology: string[]
-    }
-    security?: string[]
-    metrics: string[]
-    github?: string
-    demoUrl?: string
-    customDetails?: {
-      role: string
-      contributions: string[]
-    }
   }
 }
 
@@ -181,16 +160,16 @@ export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
 
       {/* Action Buttons */}
       <div className="flex gap-4">
-        {!isSolutionNet && (
+        {!isSolutionNet && project.github && (
           <Button onClick={() => window.open(project.github)}>
             <Github className="w-5 h-5 mr-2" />
             View Source
           </Button>
         )}
-        {isSolutionNet && (
+        {project.demoUrl && (
           <Button 
             variant="outline"
-            onClick={() => window.open('https://www.solutionnetplus.ca/')}
+            onClick={() => window.open(project.demoUrl)}
           >
             <ExternalLink className="w-5 h-5 mr-2" />
             Visit Website
